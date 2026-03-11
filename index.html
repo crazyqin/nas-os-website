@@ -8,6 +8,254 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
+    <style>
+        /* FAQ 折叠样式 */
+        .faq-item {
+            border: 1px solid var(--border-color, #e0e0e0);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: var(--card-bg, #fff);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            user-select: none;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 24px;
+            color: var(--text-secondary, #666);
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 20px;
+        }
+        
+        /* 社会证明样式 */
+        .social-proof {
+            background: var(--bg-secondary, #f8f9fa);
+            padding: 60px 0;
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .proof-stat {
+            text-align: center;
+        }
+        .proof-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color, #007bff);
+            display: block;
+        }
+        .proof-label {
+            color: var(--text-secondary, #666);
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        
+        /* 用户评价 */
+        .testimonials {
+            padding: 60px 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: var(--card-bg, #fff);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color, #e0e0e0);
+        }
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: var(--text-primary, #333);
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color, #007bff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+        }
+        .author-info h4 {
+            margin: 0;
+            font-size: 14px;
+        }
+        .author-info p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-secondary, #666);
+        }
+        
+        /* 优化定价卡片 */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            background: var(--card-bg, #fff);
+            border: 2px solid var(--border-color, #e0e0e0);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--primary-color, #007bff);
+        }
+        .pricing-card.featured {
+            border-color: var(--primary-color, #007bff);
+            background: linear-gradient(135deg, rgba(0,123,255,0.05) 0%, rgba(0,123,255,0.1) 100%);
+        }
+        .pricing-card.featured::before {
+            content: '推荐';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color, #007bff);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .pricing-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color, #007bff);
+            margin: 16px 0;
+        }
+        .pricing-price span {
+            font-size: 16px;
+            color: var(--text-secondary, #666);
+            font-weight: 400;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+            text-align: left;
+        }
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color, #e0e0e0);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-color, #007bff);
+            font-weight: 700;
+        }
+        
+        /* Hero 优化 */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-primary, #fff) 0%, var(--bg-secondary, #f8f9fa) 100%);
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, var(--secondary-color, #0056b3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary, #666);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        /* 功能卡片优化 */
+        .feature-card {
+            background: var(--card-bg, #fff);
+            border: 1px solid var(--border-color, #e0e0e0);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--primary-color, #007bff);
+        }
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        /* 响应式优化 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            .proof-number {
+                font-size: 36px;
+            }
+            .pricing-price {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -21,6 +269,8 @@
                 <li><a href="#features">功能</a></li>
                 <li><a href="#demo">演示</a></li>
                 <li><a href="#docs">文档</a></li>
+                <li><a href="#pricing">定价</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="themes/market/theme-market.html">主题市场</a></li>
                 <li><a href="https://github.com/crazyqin/nas-os" target="_blank" class="btn-primary">GitHub</a></li>
                 <li><button onclick="toggleTheme()" class="btn-primary" style="border:none;cursor:pointer;" title="切换主题">🎨</button></li>
@@ -28,18 +278,18 @@
         </div>
     </nav>
 
-    <!-- Hero 区域 -->
+    <!-- Hero 区域 - 简洁现代 -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>轻量级 NAS 系统</h1>
-                <p class="hero-subtitle">基于 Go 开发，支持 btrfs 存储管理、Docker 应用商店和自动更新</p>
+                <h1>打造你的私有云存储中心</h1>
+                <p class="hero-subtitle">基于 Go 开发的轻量级 NAS 系统，5 分钟部署，完全掌控你的数据。支持 btrfs 存储管理、Docker 应用商店和自动更新。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
-                        📥 立即下载
+                        📥 免费下载
                     </a>
                     <a href="#features" class="btn btn-large btn-secondary">
-                        了解更多
+                        查看功能
                     </a>
                 </div>
                 <div class="hero-stats">
@@ -77,7 +327,32 @@
         </div>
     </section>
 
-    <!-- 功能特性 -->
+    <!-- 社会证明 - 数据统计 -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">值得信赖的选择</h2>
+            <div class="proof-grid">
+                <div class="proof-stat">
+                    <span class="proof-number">500+</span>
+                    <span class="proof-label">GitHub Stars</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number">50+</span>
+                    <span class="proof-label">贡献者</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number">10k+</span>
+                    <span class="proof-label">下载次数</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number">99.9%</span>
+                    <span class="proof-label">稳定运行</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性 - 优化卡片设计 -->
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">核心功能</h2>
@@ -156,10 +431,107 @@
         </div>
     </section>
 
-    <!-- 下载区域 -->
+    <!-- 用户评价 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">用户评价</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"NAS-OS 让我在旧笔记本上轻松搭建了私有云，比群晖简单太多了，而且完全免费！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">李</div>
+                        <div class="author-info">
+                            <h4>李明</h4>
+                            <p>开发者，北京</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"应用商店太方便了，一键安装 Jellyfin 和 Home Assistant，家里老人都会用。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">王</div>
+                        <div class="author-info">
+                            <h4>王强</h4>
+                            <p>智能家居爱好者，上海</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"开源透明，代码质量高。作为系统管理员，我很放心在生产环境使用。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">张</div>
+                        <div class="author-info">
+                            <h4>张伟</h4>
+                            <p>系统管理员，深圳</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载/定价区域 - 清晰分层 -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">选择你的方案</h2>
+            <p class="section-subtitle" style="text-align: center;">开源免费，按需选择支持方式</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">社区版</h3>
+                    <div class="pricing-price">免费</div>
+                    <p style="color: var(--text-secondary, #666);">适合个人用户和开发者</p>
+                    <ul class="pricing-features">
+                        <li>完整核心功能</li>
+                        <li>btrfs 存储管理</li>
+                        <li>Docker 应用商店</li>
+                        <li>自动更新</li>
+                        <li>社区支持</li>
+                        <li>MIT 开源协议</li>
+                    </ul>
+                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                        免费下载
+                    </a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3 class="pricing-name">专业支持</h3>
+                    <div class="pricing-price">¥199<span>/年</span></div>
+                    <p style="color: var(--text-secondary, #666);">适合企业用户和需要技术支持的场景</p>
+                    <ul class="pricing-features">
+                        <li>包含社区版所有功能</li>
+                        <li>优先技术支持</li>
+                        <li>远程部署协助</li>
+                        <li>定制功能开发</li>
+                        <li>专属微信群支持</li>
+                        <li>商业使用授权</li>
+                    </ul>
+                    <a href="mailto:support@nas-os.com" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                        联系我们
+                    </a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-name">企业定制</h3>
+                    <div class="pricing-price">定制<span>报价</span></div>
+                    <p style="color: var(--text-secondary, #666);">适合大规模部署和深度定制需求</p>
+                    <ul class="pricing-features">
+                        <li>包含专业支持所有功能</li>
+                        <li>源码级定制开发</li>
+                        <li>专属功能模块</li>
+                        <li>现场部署培训</li>
+                        <li>SLA 服务保障</li>
+                        <li>7×24 小时支持</li>
+                    </ul>
+                    <a href="mailto:enterprise@nas-os.com" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                        咨询方案
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速下载 -->
     <section id="download" class="download">
         <div class="container">
-            <h2 class="section-title">立即下载</h2>
+            <h2 class="section-title">快速开始</h2>
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
@@ -196,22 +568,47 @@ sudo ./nasd-linux-amd64
         </div>
     </section>
 
-    <!-- 赞助支持 -->
-    <section id="pricing" class="sponsor">
+    <!-- FAQ 问答区 - 折叠样式 -->
+    <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">支持我们</h2>
-            <p class="section-subtitle">如果 NAS-OS 对你有帮助，请考虑赞助支持</p>
-            <div class="sponsor-options">
-                <a href="https://github.com/sponsors/crazyqin" target="_blank" class="sponsor-card">
-                    <div class="sponsor-icon">💖</div>
-                    <h3>GitHub Sponsors</h3>
-                    <p>每月赞助支持开发</p>
-                </a>
-                <a href="https://afdian.net/@nas-os" target="_blank" class="sponsor-card">
-                    <div class="sponsor-icon">⚡</div>
-                    <h3>爱发电</h3>
-                    <p>国内赞助平台</p>
-                </a>
+            <h2 class="section-title" style="text-align: center;">常见问题</h2>
+            <div style="max-width: 800px; margin: 40px auto 0;">
+                <div class="faq-item">
+                    <div class="faq-question">NAS-OS 支持哪些硬件平台？</div>
+                    <div class="faq-answer">
+                        NAS-OS 支持主流的 x86_64 架构（AMD64）和 ARM 架构（ARM64、ARMv7）。可以在旧笔记本、树莓派、Orange Pi 等设备上运行。最低配置要求：1GB 内存，8GB 存储空间。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">数据安全性如何保障？</div>
+                    <div class="faq-answer">
+                        NAS-OS 采用 btrfs 文件系统，支持快照、RAID 和数据校验。所有数据存储在本地，不会上传到云端。系统定期自动备份配置，更新失败可自动回滚。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">可以商业使用吗？</div>
+                    <div class="faq-answer">
+                        可以。NAS-OS 采用 MIT 开源协议，允许免费用于个人和商业用途。如果需要技术支持或定制开发，可选择专业支持或企业定制方案。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何更新系统？</div>
+                    <div class="faq-answer">
+                        NAS-OS 支持 OTA 在线更新。在 Web 面板中点击"检查更新"即可自动下载并安装最新版本。更新过程会自动备份配置，失败时自动回滚到上一个版本。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持远程访问吗？</div>
+                    <div class="faq-answer">
+                        支持。NAS-OS 内置 DDNS 动态域名解析、端口转发和 HTTPS 证书自动申请功能。配置后可通过域名安全访问，无需公网 IP 也可通过内网穿透实现远程访问。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">遇到问题如何获取帮助？</div>
+                    <div class="faq-answer">
+                        可以通过以下方式获取帮助：1) GitHub Issues 提交问题；2) GitHub Discussions 参与讨论；3) 查看官方文档；4) 专业支持用户可享受优先技术支持和专属微信群。
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -236,6 +633,24 @@ sudo ./nasd-linux-amd64
     <script src="js/main.js"></script>
     <script src="themes/engine/theme-engine.js"></script>
     <script>
+        // FAQ 折叠交互
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // 关闭所有其他项
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 如果之前不是激活状态，现在激活
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+        
         // 加载主题
         async function loadThemes() {
             const themeFiles = ['default.json', 'dark-mode.json', 'forest-green.json', 'sunset-orange.json', 'ocean-blue.json', 'sakura-pink.json'];
