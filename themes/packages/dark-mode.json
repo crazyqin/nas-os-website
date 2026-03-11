@@ -1,0 +1,27 @@
+{
+  "name": "dark-mode",
+  "displayName": "暗夜黑",
+  "description": "护眼舒适的深色模式",
+  "author": "NAS OS",
+  "version": "1.0.0",
+  "variables": {
+    "--primary-color": "#60a5fa",
+    "--primary-hover": "#3b82f6",
+    "--primary-light": "#1e3a5f",
+    "--secondary-color": "#a78bfa",
+    "--secondary-hover": "#8b5cf6",
+    "--bg-color": "#111827",
+    "--bg-secondary": "#1f2937",
+    "--bg-tertiary": "#374151",
+    "--text-color": "#f9fafb",
+    "--text-light": "#d1d5db",
+    "--text-muted": "#9ca3af",
+    "--border-color": "#374151",
+    "--border-light": "#1f2937",
+    "--success-color": "#34d399",
+    "--warning-color": "#fbbf24",
+    "--error-color": "#f87171",
+    "--gradient-primary": "linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%)"
+  },
+  "preview": "🌙"
+}

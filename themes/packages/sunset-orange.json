@@ -1,0 +1,27 @@
+{
+  "name": "sunset-orange",
+  "displayName": "日落橙",
+  "description": "温暖活力的橙色主题",
+  "author": "NAS OS",
+  "version": "1.0.0",
+  "variables": {
+    "--primary-color": "#f97316",
+    "--primary-hover": "#ea580c",
+    "--primary-light": "#ffedd5",
+    "--secondary-color": "#ec4899",
+    "--secondary-hover": "#db2777",
+    "--bg-color": "#ffffff",
+    "--bg-secondary": "#fff7ed",
+    "--bg-tertiary": "#ffedd5",
+    "--text-color": "#1f2937",
+    "--text-light": "#6b7280",
+    "--text-muted": "#9ca3af",
+    "--border-color": "#fed7aa",
+    "--border-light": "#ffedd5",
+    "--success-color": "#10b981",
+    "--warning-color": "#f59e0b",
+    "--error-color": "#ef4444",
+    "--gradient-primary": "linear-gradient(135deg, #f97316 0%, #ec4899 100%)"
+  },
+  "preview": "🌅"
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS-OS - 轻量级 NAS 系统</title>
+    <meta name="description" content="NAS-OS 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS 共享、Docker 应用商店和自动更新。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="themes/engine/theme-variables.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">💾</span>
+                <span class="logo-text">NAS-OS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">功能</a></li>
+                <li><a href="#demo">演示</a></li>
+                <li><a href="#docs">文档</a></li>
+                <li><a href="themes/market/theme-market.html">主题市场</a></li>
+                <li><a href="https://github.com/crazyqin/nas-os" target="_blank" class="btn-primary">GitHub</a></li>
+                <li><button onclick="toggleTheme()" class="btn-primary" style="border:none;cursor:pointer;" title="切换主题">🎨</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>轻量级 NAS 系统</h1>
+                <p class="hero-subtitle">基于 Go 开发，支持 btrfs 存储管理、Docker 应用商店和自动更新</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
+                        📥 立即下载
+                    </a>
+                    <a href="#features" class="btn btn-large btn-secondary">
+                        了解更多
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">v0.3.0</span>
+                        <span class="stat-label">最新版本</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10k+</span>
+                        <span class="stat-label">代码行数</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">MIT</span>
+                        <span class="stat-label">开源协议</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-sidebar"></div>
+                        <div class="preview-main">
+                            <div class="preview-card"></div>
+                            <div class="preview-card"></div>
+                            <div class="preview-card"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>存储管理</h3>
+                    <p>btrfs 文件系统支持，子卷/快照/RAID 管理，数据完整性保护</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>文件共享</h3>
+                    <p>SMB/CIFS、NFS 协议支持，多用户访问控制，权限管理</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>应用商店</h3>
+                    <p>12+ 预置 Docker 应用，一键安装，自动更新</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>自动更新</h3>
+                    <p>OTA 在线更新，失败自动回滚，安全可靠</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>网络服务</h3>
+                    <p>DDNS 动态域名、端口转发、防火墙规则配置</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>监控告警</h3>
+                    <p>系统资源监控，21 条告警规则，Web 面板展示</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用商店展示 -->
+    <section class="app-store">
+        <div class="container">
+            <h2 class="section-title">应用商店</h2>
+            <p class="section-subtitle">一键安装常用 Docker 应用</p>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">☁️</div>
+                    <h4>Nextcloud</h4>
+                    <p>私有云存储</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🎬</div>
+                    <h4>Jellyfin</h4>
+                    <p>媒体服务器</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🏠</div>
+                    <h4>Home Assistant</h4>
+                    <p>智能家居</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🛡️</div>
+                    <h4>Pi-hole</h4>
+                    <p>网络广告拦截</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">⬇️</div>
+                    <h4>Transmission</h4>
+                    <p>BT 下载</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🔄</div>
+                    <h4>Syncthing</h4>
+                    <p>文件同步</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">立即下载</h2>
+            <div class="download-grid">
+                <div class="download-card">
+                    <h3>Linux AMD64</h3>
+                    <p class="download-size">22MB</p>
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v0.3.0/nasd-linux-amd64" class="btn btn-primary">
+                        下载
+                    </a>
+                </div>
+                <div class="download-card">
+                    <h3>Linux ARM64</h3>
+                    <p class="download-size">20MB</p>
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v0.3.0/nasd-linux-arm64" class="btn btn-primary">
+                        下载
+                    </a>
+                </div>
+                <div class="download-card">
+                    <h3>Linux ARMv7</h3>
+                    <p class="download-size">21MB</p>
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v0.3.0/nasd-linux-armv7" class="btn btn-primary">
+                        下载
+                    </a>
+                </div>
+            </div>
+            <div class="install-command">
+                <h3>快速安装</h3>
+                <pre><code># 下载并运行
+wget https://github.com/crazyqin/nas-os/releases/download/v0.3.0/nasd-linux-amd64
+chmod +x nasd-linux-amd64
+sudo ./nasd-linux-amd64
+
+# 访问 Web 界面
+# http://localhost:8080</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赞助支持 -->
+    <section id="pricing" class="sponsor">
+        <div class="container">
+            <h2 class="section-title">支持我们</h2>
+            <p class="section-subtitle">如果 NAS-OS 对你有帮助，请考虑赞助支持</p>
+            <div class="sponsor-options">
+                <a href="https://github.com/sponsors/crazyqin" target="_blank" class="sponsor-card">
+                    <div class="sponsor-icon">💖</div>
+                    <h3>GitHub Sponsors</h3>
+                    <p>每月赞助支持开发</p>
+                </a>
+                <a href="https://afdian.net/@nas-os" target="_blank" class="sponsor-card">
+                    <div class="sponsor-icon">⚡</div>
+                    <h3>爱发电</h3>
+                    <p>国内赞助平台</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/crazyqin/nas-os" target="_blank">GitHub</a>
+                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank">Releases</a>
+                    <a href="https://github.com/crazyqin/nas-os/issues" target="_blank">Issues</a>
+                    <a href="https://github.com/crazyqin/nas-os/discussions" target="_blank">Discussions</a>
+                </div>
+                <p class="footer-text">
+                    © 2026 NAS-OS. MIT License. Made with ❤️ by crazyqin
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="themes/engine/theme-engine.js"></script>
+    <script>
+        // 加载主题
+        async function loadThemes() {
+            const themeFiles = ['default.json', 'dark-mode.json', 'forest-green.json', 'sunset-orange.json', 'ocean-blue.json', 'sakura-pink.json'];
+            for (const file of themeFiles) {
+                try {
+                    const response = await fetch(`themes/packages/${file}`);
+                    const theme = await response.json();
+                    window.ThemeEngine.registerTheme(theme.name, {
+                        variables: theme.variables,
+                        displayName: theme.displayName,
+                        description: theme.description
+                    });
+                } catch (e) {
+                    console.error(`加载主题 ${file} 失败:`, e);
+                }
+            }
+        }
+        
+        // 切换主题
+        function toggleTheme() {
+            window.ThemeEngine.toggleTheme();
+        }
+        
+        // 页面加载时初始化主题
+        document.addEventListener('DOMContentLoaded', loadThemes);
+    </script>
+</body>
+</html>

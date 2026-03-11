@@ -1,0 +1,27 @@
+{
+  "name": "default",
+  "displayName": "默认蓝",
+  "description": "清爽专业的默认蓝色主题",
+  "author": "NAS OS",
+  "version": "1.0.0",
+  "variables": {
+    "--primary-color": "#3b82f6",
+    "--primary-hover": "#2563eb",
+    "--primary-light": "#dbeafe",
+    "--secondary-color": "#8b5cf6",
+    "--secondary-hover": "#7c3aed",
+    "--bg-color": "#ffffff",
+    "--bg-secondary": "#f9fafb",
+    "--bg-tertiary": "#f3f4f6",
+    "--text-color": "#1f2937",
+    "--text-light": "#6b7280",
+    "--text-muted": "#9ca3af",
+    "--border-color": "#e5e7eb",
+    "--border-light": "#f3f4f6",
+    "--success-color": "#10b981",
+    "--warning-color": "#f59e0b",
+    "--error-color": "#ef4444",
+    "--gradient-primary": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+  },
+  "preview": "🔵"
+}

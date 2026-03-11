@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主题市场 - NAS OS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../themes/engine/theme-variables.css">
+    <style>
+        .theme-market {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+        
+        .market-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .theme-card {
+            background: var(--bg-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 2px solid var(--border-color);
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .theme-card.active {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+        
+        .theme-preview {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .theme-colors {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+        }
+        
+        .theme-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .theme-info p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .theme-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .theme-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-apply {
+            flex: 1;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-apply:hover {
+            background: var(--primary-hover);
+        }
+        
+        .btn-preview {
+            background: var(--bg-secondary);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-preview:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .current-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🖥️</span>
+                <span>NAS OS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="theme-market.html" style="color: var(--primary-color);">主题市场</a></li>
+                <li><a href="theme-editor.html">自定义主题</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="theme-market">
+        <div class="market-header">
+            <h1 class="section-title">🎨 主题市场</h1>
+            <p class="section-subtitle">选择你喜欢的主题，让 NAS OS 焕然一新</p>
+        </div>
+
+        <div class="theme-grid" id="themeGrid">
+            <!-- 主题卡片将通过 JS 动态加载 -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2024 NAS OS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../themes/engine/theme-engine.js"></script>
+    <script>
+        // 加载所有主题
+        async function loadThemes() {
+            const themeFiles = [
+                'default.json',
+                'dark-mode.json',
+                'forest-green.json',
+                'sunset-orange.json',
+                'ocean-blue.json',
+                'sakura-pink.json'
+            ];
+
+            const themeGrid = document.getElementById('themeGrid');
+            const currentTheme = localStorage.getItem('nas-os-theme') || 'default';
+
+            for (const file of themeFiles) {
+                try {
+                    const response = await fetch(`../themes/packages/${file}`);
+                    const theme = await response.json();
+                    
+                    // 注册主题到引擎
+                    window.ThemeEngine.registerTheme(theme.name, {
+                        variables: theme.variables,
+                        displayName: theme.displayName,
+                        description: theme.description
+                    });
+
+                    // 创建主题卡片
+                    const card = document.createElement('div');
+                    card.className = `theme-card ${theme.name === currentTheme ? 'active' : ''}`;
+                    card.innerHTML = `
+                        <div class="theme-preview">${theme.preview}</div>
+                        <div class="theme-colors">
+                            <div class="color-swatch" style="background: ${theme.variables['--primary-color']}"></div>
+                            <div class="color-swatch" style="background: ${theme.variables['--secondary-color']}"></div>
+                            <div class="color-swatch" style="background: ${theme.variables['--bg-color']}"></div>
+                            <div class="color-swatch" style="background: ${theme.variables['--text-color']}"></div>
+                        </div>
+                        <div class="theme-info">
+                            <h3>${theme.displayName}</h3>
+                            <p>${theme.description}</p>
+                            <div class="theme-meta">
+                                <span>版本：${theme.version}</span>
+                                ${theme.name === currentTheme ? '<span class="current-badge">当前使用</span>' : ''}
+                            </div>
+                            <div class="theme-actions">
+                                <button class="btn-preview" onclick="previewTheme('${theme.name}')">预览</button>
+                                <button class="btn-apply" onclick="applyTheme('${theme.name}')">应用</button>
+                            </div>
+                        </div>
+                    `;
+                    themeGrid.appendChild(card);
+                } catch (e) {
+                    console.error(`加载主题 ${file} 失败:`, e);
+                }
+            }
+        }
+
+        // 应用主题
+        function applyTheme(themeName) {
+            window.ThemeEngine.applyTheme(themeName);
+            location.reload(); // 刷新页面以显示新主题
+        }
+
+        // 预览主题（临时应用）
+        function previewTheme(themeName) {
+            const theme = window.ThemeEngine.getThemeInfo(themeName);
+            if (theme) {
+                const root = document.documentElement;
+                Object.entries(theme.variables).forEach(([key, value]) => {
+                    root.style.setProperty(key, value);
+                });
+                
+                // 3 秒后恢复原主题
+                setTimeout(() => {
+                    const currentTheme = localStorage.getItem('nas-os-theme') || 'default';
+                    window.ThemeEngine.applyTheme(currentTheme);
+                }, 3000);
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', loadThemes);
+    </script>
+</body>
+</html>

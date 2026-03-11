@@ -1,0 +1,27 @@
+{
+  "name": "sakura-pink",
+  "displayName": "樱花粉",
+  "description": "浪漫柔和的粉色主题",
+  "author": "NAS OS",
+  "version": "1.0.0",
+  "variables": {
+    "--primary-color": "#ec4899",
+    "--primary-hover": "#db2777",
+    "--primary-light": "#fce7f3",
+    "--secondary-color": "#f472b6",
+    "--secondary-hover": "#ec4899",
+    "--bg-color": "#ffffff",
+    "--bg-secondary": "#fdf2f8",
+    "--bg-tertiary": "#fce7f3",
+    "--text-color": "#1f2937",
+    "--text-light": "#6b7280",
+    "--text-muted": "#9ca3af",
+    "--border-color": "#fbcfe8",
+    "--border-light": "#fce7f3",
+    "--success-color": "#10b981",
+    "--warning-color": "#f59e0b",
+    "--error-color": "#ef4444",
+    "--gradient-primary": "linear-gradient(135deg, #ec4899 0%, #f472b6 100%)"
+  },
+  "preview": "🌸"
+}

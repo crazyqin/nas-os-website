@@ -1,0 +1,27 @@
+{
+  "name": "forest-green",
+  "displayName": "森林绿",
+  "description": "自然清新的绿色主题",
+  "author": "NAS OS",
+  "version": "1.0.0",
+  "variables": {
+    "--primary-color": "#059669",
+    "--primary-hover": "#047857",
+    "--primary-light": "#d1fae5",
+    "--secondary-color": "#84cc16",
+    "--secondary-hover": "#65a30d",
+    "--bg-color": "#ffffff",
+    "--bg-secondary": "#f0fdf4",
+    "--bg-tertiary": "#dcfce7",
+    "--text-color": "#1f2937",
+    "--text-light": "#6b7280",
+    "--text-muted": "#9ca3af",
+    "--border-color": "#bbf7d0",
+    "--border-light": "#ecfccb",
+    "--success-color": "#10b981",
+    "--warning-color": "#f59e0b",
+    "--error-color": "#ef4444",
+    "--gradient-primary": "linear-gradient(135deg, #059669 0%, #047857 100%)"
+  },
+  "preview": "🌲"
+}
