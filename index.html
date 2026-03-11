@@ -9,20 +9,33 @@
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
     <style>
-        /* FAQ 折叠样式 */
+        /* 全局优化 - 更细腻的视觉效果 */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            letter-spacing: -0.01em;
+        }
+        
+        /* FAQ 折叠样式 - 精致优化 */
         .faq-item {
-            border: 1px solid var(--border-color, #e0e0e0);
-            border-radius: 12px;
-            margin-bottom: 12px;
+            border: 1px solid var(--border-color, #e8e8e8);
+            border-radius: 16px;
+            margin-bottom: 16px;
             overflow: hidden;
             background: var(--card-bg, #fff);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .faq-item:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
         }
         .faq-question {
-            padding: 20px 24px;
+            padding: 24px 28px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -30,11 +43,14 @@
             font-weight: 600;
             font-size: 16px;
             user-select: none;
+            color: var(--text-primary, #1a1a1a);
         }
         .faq-question::after {
             content: '+';
             font-size: 24px;
-            transition: transform 0.3s ease;
+            color: var(--primary-color, #007bff);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 300;
         }
         .faq-item.active .faq-question::after {
             content: '−';
@@ -126,43 +142,46 @@
             color: var(--text-secondary, #666);
         }
         
-        /* 优化定价卡片 */
+        /* 优化定价卡片 - 更精致 */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
         }
         .pricing-card {
             background: var(--card-bg, #fff);
-            border: 2px solid var(--border-color, #e0e0e0);
-            border-radius: 16px;
-            padding: 32px;
+            border: 1px solid var(--border-color, #f0f0f0);
+            border-radius: 24px;
+            padding: 40px 32px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
         }
         .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.12);
             border-color: var(--primary-color, #007bff);
         }
         .pricing-card.featured {
             border-color: var(--primary-color, #007bff);
-            background: linear-gradient(135deg, rgba(0,123,255,0.05) 0%, rgba(0,123,255,0.1) 100%);
+            background: linear-gradient(135deg, rgba(0,123,255,0.02) 0%, rgba(0,123,255,0.06) 100%);
+            box-shadow: 0 8px 32px rgba(0,123,255,0.1);
         }
         .pricing-card.featured::before {
             content: '推荐';
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color, #007bff);
+            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, #0056b3 100%);
             color: #fff;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 6px 20px;
+            border-radius: 24px;
+            font-size: 13px;
             font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
         }
         .pricing-name {
             font-size: 24px;
@@ -199,51 +218,129 @@
             font-weight: 700;
         }
         
-        /* Hero 优化 */
+        /* Hero 优化 - 更精致 */
         .hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--bg-primary, #fff) 0%, var(--bg-secondary, #f8f9fa) 100%);
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, var(--bg-primary, #fff) 0%, var(--bg-secondary, #f9fafb) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,123,255,0.03) 0%, transparent 70%);
+            pointer-events: none;
         }
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 800;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, var(--secondary-color, #0056b3) 100%);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
         .hero-subtitle {
             font-size: 20px;
             color: var(--text-secondary, #666);
-            margin-bottom: 32px;
-            line-height: 1.6;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 600px;
         }
         
-        /* 功能卡片优化 */
+        /* 功能卡片优化 - 更精致 */
         .feature-card {
             background: var(--card-bg, #fff);
-            border: 1px solid var(--border-color, #e0e0e0);
-            border-radius: 16px;
-            padding: 32px 24px;
+            border: 1px solid var(--border-color, #f0f0f0);
+            border-radius: 20px;
+            padding: 36px 28px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
             border-color: var(--primary-color, #007bff);
         }
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
+            font-size: 52px;
+            margin-bottom: 20px;
             display: block;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+        
+        /* 按钮优化 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, #0056b3 100%);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(0,123,255,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,123,255,0.4);
+        }
+        .btn-secondary {
+            background: var(--bg-secondary, #f5f5f5);
+            color: var(--text-primary, #1a1a1a);
+        }
+        .btn-secondary:hover {
+            background: var(--border-color, #e8e8e8);
+        }
+        .btn-large {
+            padding: 16px 36px;
+            font-size: 17px;
+        }
+        
+        /* 社会证明优化 */
+        .proof-stat {
+            padding: 24px;
+            background: var(--card-bg, #fff);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        
+        /* 用户评价优化 */
+        .testimonial-card {
+            background: var(--card-bg, #fff);
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color, #f0f0f0);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
         }
         
         /* 响应式优化 */
         @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
             .hero-subtitle {
                 font-size: 16px;
@@ -253,6 +350,9 @@
             }
             .pricing-price {
                 font-size: 36px;
+            }
+            .pricing-grid {
+                gap: 20px;
             }
         }
     </style>
@@ -271,7 +371,7 @@
                 <li><a href="#docs">文档</a></li>
                 <li><a href="#pricing">定价</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="themes/market/theme-market.html">主题市场</a></li>
+                <li><a href="#contact">联系我们</a></li>
                 <li><a href="https://github.com/crazyqin/nas-os" target="_blank" class="btn-primary">GitHub</a></li>
                 <li><button onclick="toggleTheme()" class="btn-primary" style="border:none;cursor:pointer;" title="切换主题">🎨</button></li>
             </ul>
@@ -504,7 +604,7 @@
                         <li>专属微信群支持</li>
                         <li>商业使用授权</li>
                     </ul>
-                    <a href="mailto:support@nas-os.com" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                    <a href="mailto:support@nas-os.dev" class="btn btn-primary" style="display: block; margin-top: 24px;">
                         联系我们
                     </a>
                 </div>
@@ -520,7 +620,7 @@
                         <li>SLA 服务保障</li>
                         <li>7×24 小时支持</li>
                     </ul>
-                    <a href="mailto:enterprise@nas-os.com" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                    <a href="mailto:enterprise@nas-os.dev" class="btn btn-primary" style="display: block; margin-top: 24px;">
                         咨询方案
                     </a>
                 </div>
@@ -608,6 +708,28 @@ sudo ./nasd-linux-amd64
                     <div class="faq-answer">
                         可以通过以下方式获取帮助：1) GitHub Issues 提交问题；2) GitHub Discussions 参与讨论；3) 查看官方文档；4) 专业支持用户可享受优先技术支持和专属微信群。
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">联系我们</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto 40px;">有任何问题或建议？我们随时为你提供帮助。</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto;">
+                <div class="contact-card" style="background: var(--card-bg, #fff); padding: 32px; border-radius: 20px; border: 1px solid var(--border-color, #f0f0f0); box-shadow: 0 4px 16px rgba(0,0,0,0.05); text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 16px;">📧</div>
+                    <h3 style="margin-bottom: 8px; font-size: 18px;">技术支持</h3>
+                    <p style="color: var(--text-secondary, #666); margin-bottom: 16px;">产品问题、功能咨询</p>
+                    <a href="mailto:support@nas-os.dev" style="color: var(--primary-color, #007bff); text-decoration: none; font-weight: 600;">support@nas-os.dev</a>
+                </div>
+                <div class="contact-card" style="background: var(--card-bg, #fff); padding: 32px; border-radius: 20px; border: 1px solid var(--border-color, #f0f0f0); box-shadow: 0 4px 16px rgba(0,0,0,0.05); text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 16px;">💼</div>
+                    <h3 style="margin-bottom: 8px; font-size: 18px;">企业合作</h3>
+                    <p style="color: var(--text-secondary, #666); margin-bottom: 16px;">定制开发、批量部署</p>
+                    <a href="mailto:enterprise@nas-os.dev" style="color: var(--primary-color, #007bff); text-decoration: none; font-weight: 600;">enterprise@nas-os.dev</a>
                 </div>
             </div>
         </div>
