@@ -8,354 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
-    <style>
-        /* 全局优化 - 更细腻的视觉效果 */
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            letter-spacing: -0.01em;
-        }
-        
-        /* FAQ 折叠样式 - 精致优化 */
-        .faq-item {
-            border: 1px solid var(--border-color, #e8e8e8);
-            border-radius: 16px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            background: var(--card-bg, #fff);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .faq-item:hover {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
-        }
-        .faq-question {
-            padding: 24px 28px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 16px;
-            user-select: none;
-            color: var(--text-primary, #1a1a1a);
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 24px;
-            color: var(--primary-color, #007bff);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 300;
-        }
-        .faq-item.active .faq-question::after {
-            content: '−';
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 24px;
-            color: var(--text-secondary, #666);
-            line-height: 1.6;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 24px 20px;
-        }
-        
-        /* 社会证明样式 */
-        .social-proof {
-            background: var(--bg-secondary, #f8f9fa);
-            padding: 60px 0;
-        }
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
-        }
-        .proof-stat {
-            text-align: center;
-        }
-        .proof-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary-color, #007bff);
-            display: block;
-        }
-        .proof-label {
-            color: var(--text-secondary, #666);
-            font-size: 16px;
-            margin-top: 8px;
-        }
-        
-        /* 用户评价 */
-        .testimonials {
-            padding: 60px 0;
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-        .testimonial-card {
-            background: var(--card-bg, #fff);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color, #e0e0e0);
-        }
-        .testimonial-text {
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 16px;
-            color: var(--text-primary, #333);
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary-color, #007bff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 600;
-        }
-        .author-info h4 {
-            margin: 0;
-            font-size: 14px;
-        }
-        .author-info p {
-            margin: 0;
-            font-size: 12px;
-            color: var(--text-secondary, #666);
-        }
-        
-        /* 优化定价卡片 - 更精致 */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-        .pricing-card {
-            background: var(--card-bg, #fff);
-            border: 1px solid var(--border-color, #f0f0f0);
-            border-radius: 24px;
-            padding: 40px 32px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-        }
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 48px rgba(0,0,0,0.12);
-            border-color: var(--primary-color, #007bff);
-        }
-        .pricing-card.featured {
-            border-color: var(--primary-color, #007bff);
-            background: linear-gradient(135deg, rgba(0,123,255,0.02) 0%, rgba(0,123,255,0.06) 100%);
-            box-shadow: 0 8px 32px rgba(0,123,255,0.1);
-        }
-        .pricing-card.featured::before {
-            content: '推荐';
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, #0056b3 100%);
-            color: #fff;
-            padding: 6px 20px;
-            border-radius: 24px;
-            font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-        }
-        .pricing-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .pricing-price {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary-color, #007bff);
-            margin: 16px 0;
-        }
-        .pricing-price span {
-            font-size: 16px;
-            color: var(--text-secondary, #666);
-            font-weight: 400;
-        }
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-            text-align: left;
-        }
-        .pricing-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color, #e0e0e0);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--primary-color, #007bff);
-            font-weight: 700;
-        }
-        
-        /* Hero 优化 - 更精致 */
-        .hero {
-            padding: 100px 0 80px;
-            background: linear-gradient(135deg, var(--bg-primary, #fff) 0%, var(--bg-secondary, #f9fafb) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0,123,255,0.03) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-content h1 {
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-        .hero-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary, #666);
-            margin-bottom: 40px;
-            line-height: 1.7;
-            max-width: 600px;
-        }
-        
-        /* 功能卡片优化 - 更精致 */
-        .feature-card {
-            background: var(--card-bg, #fff);
-            border: 1px solid var(--border-color, #f0f0f0);
-            border-radius: 20px;
-            padding: 36px 28px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
-            border-color: var(--primary-color, #007bff);
-        }
-        .feature-icon {
-            font-size: 52px;
-            margin-bottom: 20px;
-            display: block;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-        }
-        
-        /* 按钮优化 */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
-            letter-spacing: -0.01em;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, #0056b3 100%);
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(0,123,255,0.3);
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,123,255,0.4);
-        }
-        .btn-secondary {
-            background: var(--bg-secondary, #f5f5f5);
-            color: var(--text-primary, #1a1a1a);
-        }
-        .btn-secondary:hover {
-            background: var(--border-color, #e8e8e8);
-        }
-        .btn-large {
-            padding: 16px 36px;
-            font-size: 17px;
-        }
-        
-        /* 社会证明优化 */
-        .proof-stat {
-            padding: 24px;
-            background: var(--card-bg, #fff);
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
-        
-        /* 用户评价优化 */
-        .testimonial-card {
-            background: var(--card-bg, #fff);
-            padding: 28px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color, #f0f0f0);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-        }
-        
-        /* 响应式优化 */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 60px 0 40px;
-            }
-            .hero-content h1 {
-                font-size: 36px;
-            }
-            .hero-subtitle {
-                font-size: 16px;
-            }
-            .proof-number {
-                font-size: 36px;
-            }
-            .pricing-price {
-                font-size: 36px;
-            }
-            .pricing-grid {
-                gap: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -378,59 +30,27 @@
         </div>
     </nav>
 
-    <!-- Hero 区域 - 简洁现代 -->
+    <!-- Hero 区域 - 简洁现代，OpenCat 风格 -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p class="hero-subtitle">基于 Go 开发的轻量级 NAS 系统，5 分钟部署，完全掌控你的数据。支持 btrfs 存储管理、Docker 应用商店和自动更新。</p>
+                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店和自动更新。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
-                        📥 免费下载
+                        免费下载
                     </a>
                     <a href="#features" class="btn btn-large btn-secondary">
-                        查看功能
+                        了解更多
                     </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">v0.7.0</span>
-                        <span class="stat-label">最新版本</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">10k+</span>
-                        <span class="stat-label">代码行数</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">MIT</span>
-                        <span class="stat-label">开源协议</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="dashboard-preview">
-                    <div class="preview-header">
-                        <div class="preview-dots">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <div class="preview-content">
-                        <div class="preview-sidebar"></div>
-                        <div class="preview-main">
-                            <div class="preview-card"></div>
-                            <div class="preview-card"></div>
-                            <div class="preview-card"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 社会证明 - 数据统计 -->
+    <!-- 社会证明 - 数据统计，深色背景 -->
     <section class="social-proof">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">值得信赖的选择</h2>
             <div class="proof-grid">
                 <div class="proof-stat">
                     <span class="proof-number">500+</span>
@@ -452,10 +72,11 @@
         </div>
     </section>
 
-    <!-- 功能特性 - 优化卡片设计 -->
+    <!-- 功能特性 - 白色背景 -->
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">核心功能</h2>
+            <p class="section-subtitle">NAS-OS 提供完整的私有云解决方案</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">💾</div>
@@ -491,11 +112,11 @@
         </div>
     </section>
 
-    <!-- 应用商店展示 -->
+    <!-- 应用商店展示 - 深色背景 -->
     <section class="app-store">
         <div class="container">
             <h2 class="section-title">应用商店</h2>
-            <p class="section-subtitle">一键安装常用 Docker 应用</p>
+            <p class="section-subtitle">一键安装常用 Docker 应用，扩展无限可能</p>
             <div class="apps-grid">
                 <div class="app-card">
                     <div class="app-icon">☁️</div>
@@ -531,10 +152,10 @@
         </div>
     </section>
 
-    <!-- 用户评价 -->
+    <!-- 用户评价 - 白色背景 -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">用户评价</h2>
+            <h2 class="section-title">大家爱 NAS-OS。您也会爱上。</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">"NAS-OS 让我在旧笔记本上轻松搭建了私有云，比群晖简单太多了，而且完全免费！"</p>
@@ -570,16 +191,16 @@
         </div>
     </section>
 
-    <!-- 下载/定价区域 - 清晰分层 -->
+    <!-- 定价区域 - OpenCat 风格，中间深色突出 -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">选择你的方案</h2>
-            <p class="section-subtitle" style="text-align: center;">开源免费，按需选择支持方式</p>
+            <h2 class="section-title">选择你的方案</h2>
+            <p class="section-subtitle">开源免费，按需选择支持方式</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="pricing-name">社区版</h3>
                     <div class="pricing-price">免费</div>
-                    <p style="color: var(--text-secondary, #666);">适合个人用户和开发者</p>
+                    <p class="pricing-desc">适合个人用户和开发者</p>
                     <ul class="pricing-features">
                         <li>完整核心功能</li>
                         <li>btrfs 存储管理</li>
@@ -588,14 +209,14 @@
                         <li>社区支持</li>
                         <li>MIT 开源协议</li>
                     </ul>
-                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-primary pricing-btn">
                         免费下载
                     </a>
                 </div>
                 <div class="pricing-card featured">
                     <h3 class="pricing-name">专业支持</h3>
                     <div class="pricing-price">¥199<span>/年</span></div>
-                    <p style="color: var(--text-secondary, #666);">适合企业用户和需要技术支持的场景</p>
+                    <p class="pricing-desc">适合企业用户和需要技术支持的场景</p>
                     <ul class="pricing-features">
                         <li>包含社区版所有功能</li>
                         <li>优先技术支持</li>
@@ -604,14 +225,14 @@
                         <li>专属微信群支持</li>
                         <li>商业使用授权</li>
                     </ul>
-                    <a href="mailto:support@nas-os.dev" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                    <a href="mailto:support@nas-os.dev" class="btn btn-white pricing-btn">
                         联系我们
                     </a>
                 </div>
                 <div class="pricing-card">
                     <h3 class="pricing-name">企业定制</h3>
                     <div class="pricing-price">定制<span>报价</span></div>
-                    <p style="color: var(--text-secondary, #666);">适合大规模部署和深度定制需求</p>
+                    <p class="pricing-desc">适合大规模部署和深度定制需求</p>
                     <ul class="pricing-features">
                         <li>包含专业支持所有功能</li>
                         <li>源码级定制开发</li>
@@ -620,7 +241,7 @@
                         <li>SLA 服务保障</li>
                         <li>7×24 小时支持</li>
                     </ul>
-                    <a href="mailto:enterprise@nas-os.dev" class="btn btn-primary" style="display: block; margin-top: 24px;">
+                    <a href="mailto:enterprise@nas-os.dev" class="btn btn-primary pricing-btn">
                         咨询方案
                     </a>
                 </div>
@@ -628,10 +249,11 @@
         </div>
     </section>
 
-    <!-- 快速下载 -->
+    <!-- 快速下载 - 深色背景 -->
     <section id="download" class="download">
         <div class="container">
             <h2 class="section-title">快速开始</h2>
+            <p class="section-subtitle">支持多种架构，一键部署</p>
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
@@ -668,11 +290,11 @@ sudo ./nasd-linux-amd64
         </div>
     </section>
 
-    <!-- FAQ 问答区 - 折叠样式 -->
+    <!-- FAQ 问答区 - 白色背景 -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">常见问题</h2>
-            <div style="max-width: 800px; margin: 40px auto 0;">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">NAS-OS 支持哪些硬件平台？</div>
                     <div class="faq-answer">
@@ -713,38 +335,57 @@ sudo ./nasd-linux-amd64
         </div>
     </section>
 
-    <!-- 联系我们 -->
+    <!-- 联系我们 - 深色背景 -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">联系我们</h2>
-            <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto 40px;">有任何问题或建议？我们随时为你提供帮助。</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto;">
-                <div class="contact-card" style="background: var(--card-bg, #fff); padding: 32px; border-radius: 20px; border: 1px solid var(--border-color, #f0f0f0); box-shadow: 0 4px 16px rgba(0,0,0,0.05); text-align: center;">
-                    <div style="font-size: 40px; margin-bottom: 16px;">📧</div>
-                    <h3 style="margin-bottom: 8px; font-size: 18px;">技术支持</h3>
-                    <p style="color: var(--text-secondary, #666); margin-bottom: 16px;">产品问题、功能咨询</p>
-                    <a href="mailto:support@nas-os.dev" style="color: var(--primary-color, #007bff); text-decoration: none; font-weight: 600;">support@nas-os.dev</a>
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-subtitle">有任何问题或建议？我们随时为你提供帮助。</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>技术支持</h3>
+                    <p>产品问题、功能咨询</p>
+                    <a href="mailto:support@nas-os.dev">support@nas-os.dev</a>
                 </div>
-                <div class="contact-card" style="background: var(--card-bg, #fff); padding: 32px; border-radius: 20px; border: 1px solid var(--border-color, #f0f0f0); box-shadow: 0 4px 16px rgba(0,0,0,0.05); text-align: center;">
-                    <div style="font-size: 40px; margin-bottom: 16px;">💼</div>
-                    <h3 style="margin-bottom: 8px; font-size: 18px;">企业合作</h3>
-                    <p style="color: var(--text-secondary, #666); margin-bottom: 16px;">定制开发、批量部署</p>
-                    <a href="mailto:enterprise@nas-os.dev" style="color: var(--primary-color, #007bff); text-decoration: none; font-weight: 600;">enterprise@nas-os.dev</a>
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>企业合作</h3>
+                    <p>定制开发、批量部署</p>
+                    <a href="mailto:enterprise@nas-os.dev">enterprise@nas-os.dev</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 页脚 - 简洁风格 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://github.com/crazyqin/nas-os" target="_blank">GitHub</a>
-                    <a href="https://github.com/crazyqin/nas-os/releases" target="_blank">Releases</a>
-                    <a href="https://github.com/crazyqin/nas-os/issues" target="_blank">Issues</a>
-                    <a href="https://github.com/crazyqin/nas-os/discussions" target="_blank">Discussions</a>
+                <div class="footer-logo">
+                    <span class="footer-logo-icon">💾</span>
+                    <span class="footer-logo-text">NAS-OS</span>
                 </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>产品</h4>
+                        <a href="#features">功能</a>
+                        <a href="#pricing">定价</a>
+                        <a href="#download">下载</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>资源</h4>
+                        <a href="https://github.com/crazyqin/nas-os" target="_blank">GitHub</a>
+                        <a href="https://github.com/crazyqin/nas-os/releases" target="_blank">Releases</a>
+                        <a href="https://github.com/crazyqin/nas-os/issues" target="_blank">Issues</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>社区</h4>
+                        <a href="https://github.com/crazyqin/nas-os/discussions" target="_blank">Discussions</a>
+                        <a href="#contact">联系我们</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p class="footer-text">
                     © 2026 NAS-OS. MIT License. Made with ❤️ by crazyqin
                 </p>

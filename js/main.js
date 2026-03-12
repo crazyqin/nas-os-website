@@ -21,32 +21,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 动画效果
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+// 统计数字动画 - 社会证明区域
+const socialProofSection = document.querySelector('.social-proof');
+if (socialProofSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateStats();
+            statsObserver.unobserve(socialProofSection);
         }
     });
-}, observerOptions);
+    statsObserver.observe(socialProofSection);
+}
 
-// 观察所有卡片元素
-document.querySelectorAll('.feature-card, .app-card, .download-card, .sponsor-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// 统计数字动画
 function animateStats() {
-    const stats = document.querySelectorAll('.stat-number');
+    const stats = document.querySelectorAll('.proof-number');
     stats.forEach(stat => {
         const text = stat.textContent;
         if (text.includes('v')) return; // 版本号不动画
@@ -70,18 +58,6 @@ function animateStats() {
             }
         }, 30);
     });
-}
-
-// 当统计区域可见时触发动画
-const statsSection = document.querySelector('.hero-stats');
-if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            animateStats();
-            statsObserver.unobserve(statsSection);
-        }
-    });
-    statsObserver.observe(statsSection);
 }
 
 console.log('NAS-OS Website Loaded 🚀');
