@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-    <meta name="description" content="NAS-OS v1.6.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS 共享、Docker 应用商店、RBAC 权限管理和 M5 监控告警。">
+    <meta name="description" content="NAS-OS v1.6.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS 共享、Docker 应用商店、RBAC 权限管理、M5 监控告警、回收站、存储复制和 WebDAV。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、RBAC 权限管理和 M5 监控告警。</p>
+                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、RBAC 权限管理、M5 监控告警、回收站和存储复制。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -122,6 +122,31 @@
                     <div class="feature-icon">⚡</div>
                     <h3>性能优化</h3>
                     <p>性能优化模块，系统资源高效利用，响应更快速</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗑️</div>
+                    <h3>回收站</h3>
+                    <p>文件删除后进入回收站，支持恢复和自动清理，防止误删数据</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>存储复制</h3>
+                    <p>支持存储卷远程复制，实现数据异地备份和灾难恢复</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>WebDAV</h3>
+                    <p>内置 WebDAV 服务器，支持远程文件访问和挂载，兼容各类客户端</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>配额管理</h3>
+                    <p>目录级配额控制，支持 Webhook 通知和定时报告，精细管理存储空间</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>VM 增强</h3>
+                    <p>虚拟机快照、模板管理、USB/PCIe 设备直通，完整的虚拟化支持</p>
                 </div>
             </div>
         </div>
