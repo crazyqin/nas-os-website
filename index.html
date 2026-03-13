@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-    <meta name="description" content="NAS-OS v1.7.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS 共享、Docker 应用商店、RBAC 权限管理、M5 监控告警、回收站、存储复制、WebDAV、配额管理和 VM 增强。">
+    <meta name="description" content="NAS-OS v1.8.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS 共享、Docker 应用商店、RBAC 权限管理、M5 监控告警、文件版本控制、云同步增强、数据去重。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -147,6 +147,21 @@
                     <div class="feature-icon">🖥️</div>
                     <h3>VM 增强</h3>
                     <p>虚拟机快照、模板管理、USB/PCIe 设备直通，完整的虚拟化支持</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>文件版本控制</h3>
+                    <p>自动保存文件历史版本，支持版本对比、一键还原和保留策略</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>云同步增强</h3>
+                    <p>支持阿里云 OSS、腾讯云 COS、AWS S3、Google Drive、OneDrive、Backblaze B2 双向同步</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>数据去重</h3>
+                    <p>文件级和块级去重，检测重复数据节省存储空间，支持去重报告统计</p>
                 </div>
             </div>
         </div>
@@ -298,21 +313,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">22MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.7.0/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.8.0/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">20MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.7.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.8.0/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">21MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.7.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.8.0/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -320,7 +335,7 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v1.7.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v1.8.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
