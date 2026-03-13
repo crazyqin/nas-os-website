@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-    <meta name="description" content="NAS-OS v1.9.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP 共享、Docker 应用商店、RBAC 权限管理、M5 监控告警、文件版本控制、云同步增强、数据去重、存储分层、在线文档编辑。">
+    <meta name="description" content="NAS-OS v2.1.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、存储分层、在线文档编辑。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、FTP/SFTP 文件传输、在线文档编辑、存储分层、文件标签系统。</p>
+                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、配额管理、在线文档编辑。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -124,24 +124,24 @@
                     <p>性能优化模块，系统资源高效利用，响应更快速</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🗑️</div>
-                    <h3>回收站</h3>
-                    <p>文件删除后进入回收站，支持恢复和自动清理，防止误删数据</p>
+                    <div class="feature-icon">📡</div>
+                    <h3>WebDAV</h3>
+                    <p>内置 WebDAV 服务器，支持远程文件访问和挂载，兼容各类客户端，支持文件锁和高并发</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
                     <h3>存储复制</h3>
-                    <p>支持存储卷远程复制，实现数据异地备份和灾难恢复</p>
+                    <p>支持实时同步、定时复制、双向复制，冲突自动检测和解决，实现数据异地备份和灾难恢复</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📡</div>
-                    <h3>WebDAV</h3>
-                    <p>内置 WebDAV 服务器，支持远程文件访问和挂载，兼容各类客户端</p>
+                    <div class="feature-icon">🗑️</div>
+                    <h3>回收站</h3>
+                    <p>文件删除后进入回收站，支持恢复和自动清理策略，防止误删数据，可配置保留时间和空间限制</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>配额管理</h3>
-                    <p>目录级配额控制，支持 Webhook 通知和定时报告，精细管理存储空间</p>
+                    <p>目录级配额控制，支持 Webhook 通知、定时报告和预警通知，精细管理存储空间</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🖥️</div>
@@ -333,21 +333,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">22MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.9.0/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.1.0/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">20MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.9.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.1.0/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">21MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v1.9.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.1.0/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -355,7 +355,7 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v1.9.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.1.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
