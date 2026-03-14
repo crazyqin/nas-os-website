@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-    <meta name="description" content="NAS-OS v2.15.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、存储分层、在线文档编辑、快照复制、高可用集群。">
+    <meta name="description" content="NAS-OS v2.17.1 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、存储分层、在线文档编辑、快照复制、高可用集群、智能预测分析、国际化支持。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、配额管理、在线文档编辑、快照复制、高可用集群。</p>
+                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、配额管理、在线文档编辑、快照复制、高可用集群、智能预测分析。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -198,6 +198,21 @@
                     <h3>在线文档编辑</h3>
                     <p>OnlyOffice 集成，支持 Office 文档在线预览、编辑和协作</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>智能预测分析</h3>
+                    <p>磁盘健康预测、容量趋势分析、性能预测，提前预警潜在问题</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>国际化支持</h3>
+                    <p>支持中文/英文切换，可扩展的翻译框架，本地化体验</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>API 文档系统</h3>
+                    <p>集成 Swagger/OpenAPI 文档，可交互的 API 文档页面</p>
+                </div>
             </div>
         </div>
     </section>
@@ -348,21 +363,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">22MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.15.0/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.17.1/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">20MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.15.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.17.1/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">21MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.15.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.17.1/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -370,7 +385,7 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v2.15.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.17.1/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
