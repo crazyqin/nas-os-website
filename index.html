@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-    <meta name="description" content="NAS-OS v2.23.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、存储分层、在线文档编辑、快照复制、高可用集群、智能预测分析、国际化支持。">
+    <meta name="description" content="NAS-OS v2.25.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、存储分层、在线文档编辑、快照复制、高可用集群、智能预测分析、国际化支持、Photos AI 增强、短信认证、iSCSI 管理。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -177,6 +177,36 @@
                     <div class="feature-icon">🏷️</div>
                     <h3>文件标签</h3>
                     <p>文件分类标签系统，支持标签颜色、批量操作、按标签搜索</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Photos AI 增强</h3>
+                    <p>AI 智能照片分析、人脸识别、场景分类、HEIC 转 JPEG、回忆功能，智能整理照片库</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>媒体库管理</h3>
+                    <p>完整的媒体库管理，支持元数据搜索、播放历史、收藏功能，打造私人影音中心</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>短信认证</h3>
+                    <p>阿里云、腾讯云短信 API 集成，支持 SMS 验证码登录，MFA 多因素认证增强安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>iSCSI 管理</h3>
+                    <p>完整的 iSCSI 目标管理，支持企业级存储虚拟化，兼容主流虚拟化平台</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>通知中心</h3>
+                    <p>多渠道通知管理，支持邮件、Webhook、短信等通知方式，重要事件及时推送</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>自动化工作流</h3>
+                    <p>文件监控触发器、Webhook 端点、HMAC 签名验证，自动化执行重复任务</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📸</div>
@@ -363,21 +393,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">22MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.20.1/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.25.0/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">20MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.23.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.25.0/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">21MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.23.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.25.0/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -385,7 +415,7 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v2.23.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.25.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
