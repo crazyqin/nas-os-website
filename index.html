@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.261.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、智能分层存储（热/温/冷）、多AI服务商集成（OpenAI/Google/本地LLM）、PII去标识化保护、在线文档编辑、快照复制、高可用集群、智能预测分析、国际化支持（中日英韩）、Photos AI 增强、短信认证、OAuth2/LDAP 集成、iSCSI 管理、媒体流媒体、影视库自动刮削、网络诊断、监控健康评分、Kubernetes Helm Chart 部署、WebSocket 房间/频道、Excel 报告导出、API 中间件增强、安全审计系统、Swagger API 文档、资源优化分析、智能磁盘健康监控、存储成本优化报告、项目管理 API、智能备份系统、系统监控仪表板、健康检查器、WebUI 权限管理、用户权限系统、成本分析系统、预算警报、发票与支付系统、预算预测引擎、查询缓存系统、里程碑追踪器、任务调度器、财务报告生成器、系统稳定性增强、安全加固、性能优化、Grafana 监控面板、部署验证脚本、六部协同开发框架、存储管理 API、代码质量提升、测试优化、CI/CD 增强、API 稳定性增强、六部协同开发报告系统、错误处理改进、LDAP 认证增强、自动化工作流优化、Go 1.26 支持、golangci-lint 代码质量修复、revive linter 命名规范修复、刑部安全审计修复、P0 安全漏洞修复（命令注入、路径遍历、TLS证书绕过、SMTP注入、XSS风险）、SQL 注入防护增强、数据库查询优化器安全检查、CORS 安全加固、CSRF 密钥安全加固、密钥派生安全修复、敏感信息泄露防护、Docker WebUI 路径修复、高危安全漏洞修复（路径遍历攻击防护、命令执行参数验证、文件权限加固、整数溢出边界检查）、G306 文件权限安全修复、媒体模块类型定义优化、媒体模块 goimports 格式修复、SMB/NFS会话审计、竞品分析（TrueNAS Scale/群晖DSM 7.3）、WriteOnce 不可变存储（WORM）、Hot Spare 热备盘自动切换、Fusion Pool 智能分层存储、SSD健康监控三级预警与寿命预测、AMFA 智能多重验证、SMB/NFS 自动封锁、内网穿透服务（STUN/TURN/P2P打洞）、智能RAID管理（混用容量硬盘、在线扩容）、云盘挂载（115/夸克/阿里云盘/OneDrive）。">
+<meta name="description" content="NAS-OS v2.263.0 是一个基于 Go 的轻量级 NAS 系统，支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层，参考群晖DSM 7.3 Tiering）、多AI服务商集成（OpenAI/Google/本地LLM）、PII去标识化保护、在线文档编辑、快照复制、高可用集群、智能预测分析、国际化支持（中日英韩）、Photos AI 增强、短信认证、OAuth2/LDAP 集成、iSCSI 管理、媒体流媒体、影视库自动刮削、网络诊断、监控健康评分、Kubernetes Helm Chart 部署、WebSocket 房间/频道、Excel 报告导出、API 中间件增强、安全审计系统、Swagger API 文档、资源优化分析、智能磁盘健康监控、存储成本优化报告、项目管理 API、智能备份系统、系统监控仪表板、健康检查器、WebUI 权限管理、用户权限系统、成本分析系统、预算警报、发票与支付系统、预算预测引擎、查询缓存系统、里程碑追踪器、任务调度器、财务报告生成器、系统稳定性增强、安全加固、性能优化、Grafana 监控面板、部署验证脚本、六部协同开发框架、存储管理 API、代码质量提升、测试优化、CI/CD 增强、API 稳定性增强、六部协同开发报告系统、错误处理改进、LDAP 认证增强、自动化工作流优化、Go 1.26 支持、golangci-lint 代码质量修复、revive linter 命名规范修复、刑部安全审计修复、P0 安全漏洞修复（命令注入、路径遍历、TLS证书绕过、SMTP注入、XSS风险）、SQL 注入防护增强、数据库查询优化器安全检查、CORS 安全加固、CSRF 密钥安全加固、密钥派生安全修复、敏感信息泄露防护、Docker WebUI 路径修复、高危安全漏洞修复（路径遍历攻击防护、命令执行参数验证、文件权限加固、整数溢出边界检查）、G306 文件权限安全修复、媒体模块类型定义优化、媒体模块 goimports 格式修复、SMB/NFS会话审计、竞品分析（TrueNAS Scale/群晖DSM 7.3/飞牛fnOS）、WriteOnce 不可变存储（WORM）、Hot Spare 热备盘自动切换、Fusion Pool 智能分层存储、SSD健康监控三级预警与寿命预测、AMFA 智能多重验证、SMB/NFS 自动封锁、内网穿透服务（STUN/TURN/P2P打洞）、智能RAID管理（混用容量硬盘、在线扩容）、云盘挂载（115/夸克/阿里云盘/OneDrive）。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -438,21 +438,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">55MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.261.0/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.263.0/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">52MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.261.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.263.0/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">53MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.261.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.263.0/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -460,7 +460,7 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v2.261.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.263.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
