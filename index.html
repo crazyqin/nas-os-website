@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.294.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本为条件相册与GPU加速版，已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 二进制与 Docker 镜像。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、冷热数据分层存储、S3 对象存储服务、NAS Connect 远程访问、存储成本分析、AI 人脸识别、GPU加速、条件相册、安全分享、应用模板扩展、在线文档编辑、快照复制、高可用集群、NVMe-oF 高性能存储、国际化支持与安全加固。">
+<meta name="description" content="NAS-OS v2.295.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增勒索软件检测器核心，现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、存储成本分析、勒索软件检测、AI 人脸识别、GPU加速、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群、NVMe-oF 高性能存储、国际化支持与安全加固。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、配额管理、在线文档编辑、快照复制、高可用集群、智能预测分析。</p>
+                <p class="hero-subtitle">轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、勒索软件检测、人脸识别、GPU加速AI推理、配额管理、在线文档编辑、快照复制、高可用集群、智能预测分析。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -292,6 +292,26 @@
                     <div class="feature-icon">☁️</div>
                     <h3>云盘挂载</h3>
                     <p>支持115网盘、夸克网盘、阿里云盘、OneDrive挂载，像本地磁盘一样使用云盘</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>勒索软件检测</h3>
+                    <p>文件事件监控、行为分析、可疑扩展名检测、批量修改检测、风险评分与告警、自动隔离支持</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>人脸识别</h3>
+                    <p>人脸检测与聚类、条件相册智能分类、AI驱动的照片整理，自动识别人物并分组</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>GPU加速</h3>
+                    <p>支持NVIDIA GPU加速AI推理，人脸识别、图像处理性能提升10倍</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>安全分享</h3>
+                    <p>安全分享链接生成、访问控制、有效期设置、下载统计，安全可控的文件分享</p>
                 </div>
             </div>
         </div>
