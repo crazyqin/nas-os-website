@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.382.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本完成第150轮六部协同开发，现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、CMS舰队管理、多系统集中管理（Fleet复制、全局搜索、SSO认证）、存储成本分析、勒索软件实时防护、勒索联动快照、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群、NVMe-oF RDMA高性能存储、媒体中心智能分类与缓存、API版本化与密钥管理、内网穿透、RAIDZ扩展（开发中）、共享标签系统、磁盘电源管理、按需唤醒硬盘、能耗成本分析、TMDB影视刮削、密码策略强化、Active Backup框架、国际化支持与安全加固、WebUI性能优化（骨架屏、资源预加载）、WriteOnce不可变存储、AI数据脱敏。">
+<meta name="description" content="NAS-OS v2.383.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本完成第151轮六部协同开发，现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、CMS舰队管理、多系统集中管理（Fleet复制、全局搜索、SSO认证）、存储成本分析、勒索软件实时防护、勒索联动快照、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群、NVMe-oF RDMA高性能存储、媒体中心智能分类与缓存、API版本化与密钥管理、内网穿透、RAIDZ扩展（开发中）、共享标签系统、磁盘电源管理、按需唤醒硬盘、能耗成本分析、TMDB影视刮削、密码策略强化、Active Backup框架、国际化支持与安全加固、WebUI性能优化（骨架屏、资源预加载）、WriteOnce不可变存储、AI数据脱敏、存储池可视化、照片分享链接。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -493,26 +493,26 @@
     <section id="download" class="download">
         <div class="container">
             <h2 class="section-title">快速开始</h2>
-            <p class="section-subtitle">支持多种架构，一键部署。当前最新版本：v2.382.0（第150轮六部协同开发，发布于 2026-04-03）</p>
+            <p class="section-subtitle">支持多种架构，一键部署。当前最新版本：v2.383.0（第151轮六部协同开发，发布于 2026-04-03）</p>
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">55MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.382.0/nasd-linux-amd64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.383.0/nasd-linux-amd64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">52MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.382.0/nasd-linux-arm64" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.383.0/nasd-linux-arm64" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">53MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.382.0/nasd-linux-armv7" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.383.0/nasd-linux-armv7" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -520,12 +520,12 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v2.382.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.383.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
 # Docker
-docker pull ghcr.io/crazyqin/nas-os:v2.382.0
+docker pull ghcr.io/crazyqin/nas-os:v2.383.0
 
 # 访问 Web 界面
 # http://localhost:8080</code></pre>
