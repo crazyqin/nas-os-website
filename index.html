@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.468.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本完成第240轮六部协同开发（VM Secure Boot + TrueSearch Phase 2），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储（Phase2已完成：ANA多路径+ACL安全）、RAIDZ Expansion WebUI（对标TrueNAS 26）、Hybrid Share混合云存储、媒体中心智能分类与缓存、API版本化与密钥管理、FRP内网穿透WebUI（免费节点支持）、共享标签系统、按需唤醒硬盘、TMDB影视刮削、密码策略强化、Active Backup框架、Drive Sync双向同步（含冲突解决与版本历史）、Passkey/WebAuthn无密码登录、国际化支持与安全加固、WebUI现代化设计、SMART监控cron模式、btrfs scrub数据清洗与文件自愈、存储效率分析、群晖DSM 7.3深度对标、TrueNAS 27预研、VM Secure Boot（UEFI密钥管理+证书链验证+固件集成）、TrueSearch全文搜索引擎（文件内容提取+中文分词+毫秒级响应）。四大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载。">
+<meta name="description" content="NAS-OS v2.471.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增 AI Console 本地LLM集成、邮件审核管控、选择性域同步、系统自检自修复、合规报告自动生成，现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储（Phase2已完成：ANA多路径+ACL安全）、RAIDZ Expansion WebUI（对标TrueNAS 26）、Hybrid Share混合云存储、媒体中心智能分类与缓存、API版本化与密钥管理、FRP内网穿透WebUI（免费节点支持）、共享标签系统、按需唤醒硬盘、TMDB影视刮削、密码策略强化、Active Backup框架、Drive Sync双向同步（含冲突解决与版本历史）、Passkey/WebAuthn无密码登录、国际化支持与安全加固、WebUI现代化设计、SMART监控cron模式、btrfs scrub数据清洗与文件自愈、存储效率分析、群晖DSM 7.3深度对标、TrueNAS 27预研、VM Secure Boot（UEFI密钥管理+证书链验证+固件集成）、TrueSearch全文搜索引擎（文件内容提取+中文分词+毫秒级响应）。五大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -367,6 +367,61 @@
                     <div class="feature-icon">🔗</div>
                     <h3>多系统管理</h3>
                     <p>系统注册、状态监控、集中管理、Fleet复制、全局搜索、SSO认证，一台设备管理多个NAS实例</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>智能分层规则引擎</h3>
+                    <p>按文件年龄/访问频率/文件类型自动迁移，热SSD/温HDD/冷归档三级智能分层</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>加密卷管理</h3>
+                    <p>基于 PBKDF2+AES-256-GCM 的加密卷，支持密码挂载/卸载，安全存储敏感数据</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>协作文件锁</h3>
+                    <p>多人协作文件锁定，超时自动释放，防止编辑冲突，提升团队效率</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>安全文件收集</h3>
+                    <p>通过链接安全收集文件，支持配额限制，无需账户即可上传，对标群晖 File Request</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>批量告警摘要</h3>
+                    <p>告警聚合摘要、定时发送、多通道配置，告别告警疲劳</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>不可变备份</h3>
+                    <p>SHA-256校验+审计日志，备份数据不可篡改，满足合规要求，对标 TrueNAS Immutable Backup</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Console</h3>
+                    <p>本地 LLM 集成，隐私数据自动脱敏，OpenAI 兼容 API，安全的 AI 助手</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>邮件审核管控</h3>
+                    <p>多级审核策略、审计追踪，企业邮件合规管理</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>选择性域同步</h3>
+                    <p>选择性 OU 同步，最小权限原则，精确控制 AD/LDAP 同步范围</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🩺</div>
+                    <h3>系统自检自修复</h3>
+                    <p>SMART/文件系统/服务/证书健康自检，自动修复常见问题，保障系统稳定</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>合规报告</h3>
+                    <p>自动生成 GDPR/等保/SOC2 合规报告，审计必备</p>
                 </div>
             </div>
         </div>
