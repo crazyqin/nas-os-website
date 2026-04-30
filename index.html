@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.471.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增 AI Console 本地LLM集成、邮件审核管控、选择性域同步、系统自检自修复、合规报告自动生成，现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储（Phase2已完成：ANA多路径+ACL安全）、RAIDZ Expansion WebUI（对标TrueNAS 26）、Hybrid Share混合云存储、媒体中心智能分类与缓存、API版本化与密钥管理、FRP内网穿透WebUI（免费节点支持）、共享标签系统、按需唤醒硬盘、TMDB影视刮削、密码策略强化、Active Backup框架、Drive Sync双向同步（含冲突解决与版本历史）、Passkey/WebAuthn无密码登录、国际化支持与安全加固、WebUI现代化设计、SMART监控cron模式、btrfs scrub数据清洗与文件自愈、存储效率分析、群晖DSM 7.3深度对标、TrueNAS 27预研、VM Secure Boot（UEFI密钥管理+证书链验证+固件集成）、TrueSearch全文搜索引擎（文件内容提取+中文分词+毫秒级响应）。五大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console。">
+<meta name="description" content="NAS-OS v2.473.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增 SMB审计增强（14种操作类型+用户级追踪+多通道告警）、存储成本分析API（每TB成本/层级对比/ROI分析）、Prometheus监控指标导出（预置Grafana仪表板+WebSocket实时推送）、迁移助手（跨节点迁移+SHA-256校验+实时进度追踪）、合规报告增强（GDPR/CCPA+数据泄露通知+仪表盘），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储（Phase2已完成：ANA多路径+ACL安全）、RAIDZ Expansion WebUI（对标TrueNAS 26）、Hybrid Share混合云存储、媒体中心智能分类与缓存、API版本化与密钥管理、FRP内网穿透WebUI（免费节点支持）、共享标签系统、按需唤醒硬盘、TMDB影视刮削、密码策略强化、Active Backup框架、Drive Sync双向同步（含冲突解决与版本历史）、Passkey/WebAuthn无密码登录、国际化支持与安全加固、WebUI现代化设计、SMART监控cron模式、btrfs scrub数据清洗与文件自愈、存储效率分析、群晖DSM 7.3深度对标、TrueNAS 27预研、VM Secure Boot（UEFI密钥管理+证书链验证+固件集成）、TrueSearch全文搜索引擎（文件内容提取+中文分词+毫秒级响应）。五大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p>轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、勒索软件实时防护、WebShare搜索、多系统管理、人脸识别、Ollama本地大模型、GPU智能调度、条件相册、配额管理、在线文档编辑、快照复制、高可用集群、智能预测分析。</p>
+                <p>轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、勒索软件实时防护、WebShare搜索、多系统管理、人脸识别、Ollama本地大模型、GPU智能调度、条件相册、配额管理、在线文档编辑、快照复制、高可用集群、智能预测分析、SMB审计增强、Prometheus监控、迁移助手、合规报告。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -276,7 +276,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>成本分析系统</h3>
-                    <p>成本概览仪表板、趋势分析、智能预测、优化建议，帮助理解和优化 NAS 资源消耗</p>
+                    <p>每TB存储成本计算、层级对比分析、容量规划预测、ROI投资回报分析，帮助理解和优化 NAS 资源消耗</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔔</div>
@@ -421,7 +421,27 @@
                 <div class="feature-card">
                     <div class="feature-icon">📄</div>
                     <h3>合规报告</h3>
-                    <p>自动生成 GDPR/等保/SOC2 合规报告，审计必备</p>
+                    <p>自动生成 GDPR/CCPA 合规报告，数据泄露通知仪表盘，WriteOnce+审计日志联动合规链，审计必备</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>Prometheus 监控集成</h3>
+                    <p>原生 Prometheus 指标导出（/metrics 端点），预置 Grafana 仪表板模板，实时 WebSocket 指标推送，存储/网络/系统/应用四维指标</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>迁移助手</h3>
+                    <p>SMB/NFS 共享配置批量迁移，用户权限数据导入导出，存储池跨节点迁移（btrfs快照+同步），SHA-256 完整性校验，WebSocket 实时进度追踪</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>SMB 审计增强</h3>
+                    <p>14 种 SMB 操作类型审计，用户级访问记录与 IP 追踪，自定义审计规则（路径/用户/操作类型过滤），JSON/CSV 导出，多通道告警</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>NVMe-oF REST API</h3>
+                    <p>子系统/命名空间/端口/主机访问控制完整 REST API，RDMA + TCP 双传输，ANA 多路径 + ACL 安全，22 个单元测试全覆盖</p>
                 </div>
             </div>
         </div>
