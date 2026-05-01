@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.480.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增 RDMA高性能网络（RoCE+MPIO+自动降级）、自定义监控仪表盘（多数据源+Widget配置+仪表盘导入导出）、S3对象存储网关（S3兼容API+多租户隔离+生命周期管理）、用户引导与快速入门（5步引导向导+快速入门卡片+新手教程）、存储配额智能管理（多层级配额+使用量预测+智能清理建议）、数据保留策略引擎（法律保留+策略模拟+合规报告），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储、混合闪存池智能分层、引导式告警系统、用户权限模板、WORM合规报告、Scrub智能避峰调度。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。">
+<meta name="description" content="NAS-OS v2.481.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增存储成本预测引擎（历史趋势预测+多方案成本对比+ROI分析+容量规划+成本优化建议）、WORM合规仪表盘（合规概览+策略管理+合规报告+异常检测+审计日志）、存储健康评分仪表盘（综合评分0-100+分项评分+历史趋势+健康建议+预警机制）、权限模板系统（6个预置模板+自定义模板+模板继承+批量应用+临时权限），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储、混合闪存池智能分层、引导式告警系统、用户权限模板、WORM合规仪表盘、Scrub智能避峰调度、存储成本预测引擎。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>打造你的私有云存储中心</h1>
-                <p>轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、RDMA高性能网络（RoCE+MPIO+自动降级）、自定义监控仪表盘（多数据源+Widget配置+导入导出）、S3对象存储网关（S3兼容API+多租户隔离+生命周期管理）、用户引导与快速入门（5步引导+新手教程）、存储配额智能管理（多层级+使用量预测+智能清理建议）、数据保留策略引擎（法律保留+策略模拟+合规报告）、混合闪存池智能分层（NVMe SSD+HDD三级自动分层）、引导式告警系统（分步排查+根因分析+自动修复）、用户权限模板（5个内置模板）、WORM合规报告（SHA-256完整性校验）、Scrub智能避峰调度、全卷加密（LUKS + AES-NI硬件加速）、块级备份引擎（2倍+速度提升）、Docker Compose Web UI、SSO全协议扩展、全局文件锁、SMB多通道聚合、无Root管理员、LXC容器沙箱、智能数据迁移、合规仪表盘、UPS电源监控、网络唤醒、ML勒索检测、Prometheus监控、迁移助手、合规报告、智能磁盘休眠、存储健康评分、系统健康检查API。</p>
+                <p>轻量级 NAS 系统，5 分钟部署。支持 btrfs 存储管理、Docker 应用商店、存储复制、回收站、WebDAV/FTP/SFTP 文件传输、RDMA高性能网络（RoCE+MPIO+自动降级）、自定义监控仪表盘（多数据源+Widget配置+导入导出）、S3对象存储网关（S3兼容API+多租户隔离+生命周期管理）、用户引导与快速入门（5步引导+新手教程）、存储配额智能管理（多层级+使用量预测+智能清理建议）、数据保留策略引擎（法律保留+策略模拟+合规报告）、混合闪存池智能分层（NVMe SSD+HDD三级自动分层）、引导式告警系统（分步排查+根因分析+自动修复）、用户权限模板（6个预置模板+自定义+批量应用）、WORM合规仪表盘（合规概览+策略管理+异常检测+审计日志）、Scrub智能避峰调度、存储成本预测引擎（历史趋势预测+多方案成本对比+ROI分析+容量规划+成本优化建议，竞品均无）、存储健康评分仪表盘（综合评分0-100+分项评分+历史趋势+健康建议+预警机制）、全卷加密（LUKS + AES-NI硬件加速）、块级备份引擎（2倍+速度提升）、Docker Compose Web UI、SSO全协议扩展、全局文件锁、SMB多通道聚合、无Root管理员、LXC容器沙箱、智能数据迁移、合规仪表盘、UPS电源监控、网络唤醒、ML勒索检测、Prometheus监控、迁移助手、合规报告、智能磁盘休眠、存储健康评分、系统健康检查API。</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" class="btn btn-large btn-primary">
                         免费下载
@@ -459,9 +459,9 @@
                     <p>基于访问模式的预测性休眠，工作日/周末差异化策略，磁盘温度联动休眠，节能又护盘</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">❤️‍🩹</div>
-                    <h3>存储健康评分</h3>
-                    <p>综合SMART、温度、使用年限的健康评分，预测性告警提前预警磁盘故障，健康趋势图表数据</p>
+                    <div class="feature-icon">💯</div>
+                    <h3>存储健康评分仪表盘</h3>
+                    <p>综合健康评分（0-100），涵盖磁盘SMART、RAID冗余、碎片化、备份覆盖、数据老化，分项评分（硬件/数据安全/性能/备份），历史评分趋势记录，健康建议生成，评分低于阈值自动告警</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🩺</div>
@@ -610,13 +610,13 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">👤</div>
-                    <h3>用户权限模板</h3>
-                    <p>5个内置模板（家庭/办公/媒体/开发者/管理员），每模板含权限集合和配额限制，支持自定义模板创建，对标群晖简化用户管理</p>
+                    <h3>用户权限模板系统</h3>
+                    <p>6个预置模板（管理员/普通用户/只读用户/访客/媒体管理者/备份管理员），自定义模板创建，模板继承（基础+细粒度覆盖），批量应用到多个用户，权限变更审计历史，临时权限（支持过期时间）</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3>WORM 合规报告</h3>
-                    <p>Write Once Read Many 不可变存储保护，四级保留级别（Compliance/Governance/Legal/Audit），SHA-256完整性校验，合规报告生成</p>
+                    <h3>WORM 合规仪表盘</h3>
+                    <p>合规概览仪表盘（受保护文件数/存储量/合规率），按目录/文件类型设置WORM策略，按月/季度生成合规报告，异常检测（绕过WORM保护尝试），保留期管理，完整WORM操作审计追踪</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
@@ -652,6 +652,11 @@
                     <div class="feature-icon">📋</div>
                     <h3>数据保留策略引擎</h3>
                     <p>按文件类型/路径/大小/年龄/标签定义策略，法律保留（Legal Hold）期间文件不可删除，策略模拟预览影响范围，完整审计轨迹和合规报告</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>存储成本预测引擎</h3>
+                    <p>基于历史存储增长趋势预测未来3/6/12个月需求，计算HDD/SSD/NVMe/云存储多方案成本，ROI投资回报率分析，容量规划建议（何时扩容），冷热数据分层/去重压缩收益预估，竞品均无此功能</p>
                 </div>
             </div>
         </div>
