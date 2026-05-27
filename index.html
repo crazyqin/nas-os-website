@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.500.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增集群管理器（多节点统一管理/故障转移）、AI文件清理器（智能识别重复/冗余文件）、数据治理（数据分类/合规审计/生命周期管理）、网络QoS（带宽管理/流量整形/优先级控制）、SMART硬盘监控（实时健康检测/故障预测/告警）、统一备份（多源聚合/增量去重/跨平台恢复）、资产管理（IT资产台账/折旧计算/生命周期追踪）、品牌定制（企业Logo/配色/自定义品牌元素）、容器安全（漏洞扫描/运行时防护/合规检查）、成本治理（多维度成本分析/预算控制/优化建议）、GitOps引擎（声明式部署/Git驱动/自动同步）、媒体索引（多媒体内容索引/元数据提取/全文搜索）、网络流量分析（NetFlow/sFlow采集/可视化/异常检测）、存储QoS（IOPS/带宽保证/限速策略）、AI日志分析器（智能日志模式识别/异常检测/根因分析）、隐私数据扫描（PII数据自动识别/敏感文件扫描/合规报告）、K3s容器编排（集群管理/Helm部署/服务网格）、照片去重（感知哈希检测/智能保留建议）、智能电源管理（HDD休眠/UPS监控/功耗统计）、RSS阅读器（订阅源管理/定时抓取），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储、混合闪存池智能分层、引导式告警系统、用户权限模板、WORM合规仪表盘、Scrub智能避峰调度、存储成本预测引擎、存储健康评分仪表盘、磁盘健康仪表盘（SMART监控+历史趋势）、NVMe Fabric存储网络（NVMe/TCP+RDMA）、应用池自动迁移、集中备份控制台（多平台备份源+任务调度+恢复点管理）、混合云同步、Passkey无密码认证（FIDO2）、电源事件监控（UPS联动）、网络威胁防护（Wanguard）、智能备份策略引擎、容器自动恢复引擎（对标群晖Container Manager）、数据溯源追踪（对标TrueNAS）、文件智能标签、智能通知中心（对标群晖Notification Center）、存储效率分析器（对标群晖Storage Analyzer）、应用反馈收集。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。">
+<meta name="description" content="NAS-OS v2.501.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增集群管理器（多节点统一管理/故障转移）、AI文件清理器（智能识别重复/冗余文件）、数据治理（数据分类/合规审计/生命周期管理）、网络QoS（带宽管理/流量整形/优先级控制）、SMART硬盘监控（实时健康检测/故障预测/告警）、统一备份（多源聚合/增量去重/跨平台恢复）、资产管理（IT资产台账/折旧计算/生命周期追踪）、品牌定制（企业Logo/配色/自定义品牌元素）、容器安全（漏洞扫描/运行时防护/合规检查）、成本治理（多维度成本分析/预算控制/优化建议）、GitOps引擎（声明式部署/Git驱动/自动同步）、媒体索引（多媒体内容索引/元数据提取/全文搜索）、网络流量分析（NetFlow/sFlow采集/可视化/异常检测）、存储QoS（IOPS/带宽保证/限速策略）、AI日志分析器（智能日志模式识别/异常检测/根因分析）、隐私数据扫描（PII数据自动识别/敏感文件扫描/合规报告）、K3s容器编排（集群管理/Helm部署/服务网格）、照片去重（感知哈希检测/智能保留建议）、智能电源管理（HDD休眠/UPS监控/功耗统计）、RSS阅读器（订阅源管理/定时抓取），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、SMB Auditing审计日志、SMB Spotlight macOS搜索、Bleve全文索引、Docker 应用商店、RBAC 权限管理、存储复制、回收站、配额管理、云同步增强（含冲突处理）、数据去重、冷热数据分层存储（热SSD/温HDD/冷归档三级自动分层）、S3 对象存储服务、NAS Connect 远程访问、多系统集中管理（Fleet复制、全局搜索、SSO认证）、Fleet监控系统（Active Insight对标）、存储成本分析、勒索软件实时防护、WebShare搜索、AI 人脸识别（支持Intel核显加速）、Ollama本地大模型、GPU智能调度、条件相册、安全分享、应用中心框架、在线文档编辑、快照复制、高可用集群（含SMB Stateful Failover会话级故障转移）、NVMe-oF RDMA高性能存储、混合闪存池智能分层、引导式告警系统、用户权限模板、WORM合规仪表盘、Scrub智能避峰调度、存储成本预测引擎、存储健康评分仪表盘、磁盘健康仪表盘（SMART监控+历史趋势）、NVMe Fabric存储网络（NVMe/TCP+RDMA）、应用池自动迁移、集中备份控制台（多平台备份源+任务调度+恢复点管理）、混合云同步、Passkey无密码认证（FIDO2）、电源事件监控（UPS联动）、网络威胁防护（Wanguard）、智能备份策略引擎、容器自动恢复引擎（对标群晖Container Manager）、数据溯源追踪（对标TrueNAS）、文件智能标签、智能通知中心（对标群晖Notification Center）、存储效率分析器（对标群晖Storage Analyzer）、应用反馈收集。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -827,6 +827,46 @@
                     <div class="feature-icon">🔍</div>
                     <h3>磁盘健康仪表盘</h3>
                     <p>对标 TrueNAS Scrutiny，SMART 监控仪表盘，磁盘注册与管理（SATA/SAS/NVMe/USB），健康评分与历史趋势，引导式告警规则</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>访问审计系统</h3>
+                    <p>零信任访问审计，四级风险等级（低/中/高/严重），访问状态追踪（成功/拒绝/失败），异常访问实时告警，满足企业合规需求</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 智能助手</h3>
+                    <p>自然语言查询系统状态，智能故障诊断，文件智能搜索，系统/CPU/内存/磁盘状态问答，对标群晖 AI Assistant</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>数据分析平台</h3>
+                    <p>系统指标收集与分析，存储使用趋势分析，用户行为分析，性能指标（IOPS/延迟）监控，多维度数据可视化</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>合规检查引擎</h3>
+                    <p>支持 GDPR/等保2.0/ISO27001 多标准合规检查，自动合规报告生成，检查项状态追踪（通过/失败/警告），合规评分与整改建议</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>去重可视化</h3>
+                    <p>存储去重效果可视化展示，重复文件检测与分组，空间节省统计，去重策略建议，优化存储资源利用率</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>文件快照管理</h3>
+                    <p>文件级快照创建与恢复，快照版本管理，定时自动快照策略，快照空间统计，快速回滚到任意历史版本</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>权限中心</h3>
+                    <p>集中式权限管理，权限继承与覆盖，权限模板批量应用，权限变更审计，细粒度访问控制</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔎</div>
+                    <h3>系统审计</h3>
+                    <p>系统级操作审计日志，用户行为追踪，异常操作检测，审计报告自动生成，合规审计必备</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌐</div>
