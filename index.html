@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS-OS - 轻量级 NAS 系统</title>
-<meta name="description" content="NAS-OS v2.557.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增智能容器资源限制器（容器CPU/内存/IO限制+动态调整+资源监控）、智能数据放置引擎（AI驱动数据分布优化+热度感知+自动迁移策略）、存储成本分析器增强（TCO/ROI/方案对比/预测）、Zero Trust ABAC模块（基于属性的访问控制+动态策略评估+最小权限执行）、智能快照管理模块（自动快照策略+生命周期管理+空间优化）、运维智能分析（系统运行状态AI分析+异常检测+优化建议）、健康预后（系统健康趋势预测+故障预警+维护建议）、智能再平衡（存储池负载均衡+自动数据迁移+性能优化）、智能存储健康预测（S.M.A.R.T数据分析/AI故障预测/健康评分系统/趋势分析/智能告警/修复建议）、系统诊断中心（一键诊断/健康评分/问题检测）、智能温控管理（温度监控/风扇控制/散热策略）、文件版本控制（版本历史/差异对比/回滚恢复）、功率管理器（功耗监控/节能策略/定时开关机）、数据完整性校验（校验和计算/损坏检测/自动修复）、合规扫描器（自动化合规检查/规则引擎/修复建议）、dRAID分布式RAID（分布式热备/动态重建/性能优化）、功率预算管理（功耗监控/预算告警/能耗分析）、智能带宽预测（流量学习/带宽预测/QoS调度），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、Docker 应用商店、RBAC 权限管理、高可用集群、NVMe-oF RDMA高性能存储、AI 智能顾问、GPU 直通、ZFS 增强管理。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。当前版本新增：存储效率管理器（统一存储效率管理+按共享文件夹去重压缩，对标群晖DSM 7.4 Storage Efficiency）、游戏资源预加速器（AI驱动游戏资源预测+多游戏平台支持，对标飞牛fnOS）、自主AI代理（自主任务规划+四大代理，对标群晖DSM Agent 1.0）、混合存储池管理器（Flash+HDD分层优化+智能迁移，对标TrueNAS OpenZFS 2.4）、智能用户入职（模板化用户创建+引导式设置+自动权限，对标TrueNAS）、AI Token预算管理器（Token配额管理+实时成本追踪+预算告警）、FIPS合规加密保险库（FIPS 140-2/140-3合规加密+密钥管理轮换+合规审计）、AI智能路由引擎（多模型智能选择+负载均衡+故障转移+成本优化）、存储效率增强（数据去重+压缩+存储优化）、引导式告警系统（智能告警分析+故障定位引导+自动修复建议）、媒体中心增强（统一媒体项管理）、智能备份编排器、NAS舰队指挥官、智能家居Hub Pro、AI系统管理员、持续数据保护、容器守护者、内容AI、媒体组织专家、NAS守护者、项目中心、统一AI助手、智能计费系统、智能能耗预测、智能硬盘LED、智能配额推荐、智能工作流引擎、存储网络2、智能远程访问网关（P2P直连/中继/代理+端到端加密+动态DNS，竞品均无）、AI能源优化器（智能能耗分析+优化建议+成本降低）、AI文件管家（智能文件整理+自动分类+重复检测）、社交媒体管理中心（多平台聚合+内容调度+数据分析）、AI存储智能分析引擎（存储性能AI分析+容量预测+优化建议）、AI运维助手（智能运维诊断+自动化修复+知识库）、NAS迁移工具（一键迁移+数据完整性校验+进度追踪）、SaaS应用数据备份（多SaaS平台支持+增量备份+统一恢复）、智能家居场景引擎（场景自动化+条件触发+设备联动，对标飞牛fnOS）、智能容量规划（AI驱动容量预测+资源使用分析+扩展建议）、智能块级数据去重引擎（块级去重+哈希索引+去重率统计）、智能能源管家（能耗监控+节能策略+成本优化）、智能风扇控制（温度监控+风扇曲线调节+PID控制）、云成本优化管理（多云成本分析+优化建议+预算控制）、智能存储迁移规划器（迁移路径规划+风险评估+进度追踪，对标TrueNAS）、ZFS数据自愈（自动数据修复+校验和验证+完整性保障）。">
+<meta name="description" content="NAS-OS v2.558.0 是一个基于 Go 的轻量级 NAS 系统；当前最新版本新增智能容器资源限制器（容器CPU/内存/IO限制+动态调整+资源监控）、智能数据放置引擎（AI驱动数据分布优化+热度感知+自动迁移策略）、存储成本分析器增强（TCO/ROI/方案对比/预测）、Zero Trust ABAC模块（基于属性的访问控制+动态策略评估+最小权限执行）、智能快照管理模块（自动快照策略+生命周期管理+空间优化）、运维智能分析（系统运行状态AI分析+异常检测+优化建议）、健康预后（系统健康趋势预测+故障预警+维护建议）、智能再平衡（存储池负载均衡+自动数据迁移+性能优化）、智能存储健康预测（S.M.A.R.T数据分析/AI故障预测/健康评分系统/趋势分析/智能告警/修复建议）、系统诊断中心（一键诊断/健康评分/问题检测）、智能温控管理（温度监控/风扇控制/散热策略）、文件版本控制（版本历史/差异对比/回滚恢复）、功率管理器（功耗监控/节能策略/定时开关机）、数据完整性校验（校验和计算/损坏检测/自动修复）、合规扫描器（自动化合规检查/规则引擎/修复建议）、dRAID分布式RAID（分布式热备/动态重建/性能优化）、功率预算管理（功耗监控/预算告警/能耗分析）、智能带宽预测（流量学习/带宽预测/QoS调度），现已提供 Linux AMD64/ARM64/ARMv7、macOS AMD64/ARM64、Windows AMD64 与 Docker 镜像下载。系统支持 btrfs 存储管理、SMB/NFS/FTP/SFTP/WebDAV 共享、SMB Multichannel多通道传输、Docker 应用商店、RBAC 权限管理、高可用集群、NVMe-oF RDMA高性能存储、AI 智能顾问、GPU 直通、ZFS 增强管理。六大独家功能：WriteOnce不可变存储、本地LLM服务、AI以文搜图、多云存储挂载、AI Console、全卷加密。当前版本新增：文件翻译（多语言文件翻译+格式保留+批量处理）、安全基准测试（CIS基准+自动化检测+合规报告）、零信任网格（零信任架构+网格加密+微隔离）、多协议网关（多协议转换+统一接入+协议桥接）、系统仪表盘（全局监控+可视化+实时指标）、智能UI向导（引导式配置+智能推荐+操作简化）、成本智能分析（多维成本分析+优化建议+预算管理）、AI预测性磁盘（磁盘故障预测+寿命评估+预警）、隔空投送（局域网文件快传+设备发现+加密传输）、带宽可视化（实时流量监控+拓扑图+瓶颈分析）、启动环境管理（多启动环境+切换+回滚）、Docker Swarm管理（集群管理+服务编排+负载均衡）、硬件健康预测（硬件状态AI分析+故障预测+维护建议）、智能数据保护（数据分类+加密+访问控制+审计）、智能照片AI（照片分类+人脸识别+场景识别+智能搜索）、智能资源调度器（AI驱动资源分配+负载均衡+优先级调度）、统一备份网关（多源备份统一管理+增量+加密+去重）。">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/engine/theme-variables.css">
     <link rel="icon" href="favicon.ico">
@@ -1940,6 +1940,56 @@
                     <h3>FIPS合规加密保险库</h3>
                     <p>FIPS 140-2/140-3合规加密、密钥管理和轮换、跨协议加密共享、合规审计日志，对标TrueNAS FIPS加密</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>零信任网格</h3>
+                    <p>零信任架构、网格加密、微隔离，安全的分布式网络访问控制</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>多协议网关</h3>
+                    <p>多协议转换、统一接入、协议桥接，支持SMB/NFS/iSCSI等多种协议无缝切换</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>系统仪表盘</h3>
+                    <p>全局监控、可视化、实时指标，一站式掌握系统运行状态</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>AI预测性磁盘</h3>
+                    <p>磁盘故障预测、寿命评估、预警，基于SMART数据和机器学习的智能预测</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>隔空投送</h3>
+                    <p>局域网文件快传、设备发现、加密传输，类似Apple AirDrop的便捷体验</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>带宽可视化</h3>
+                    <p>实时流量监控、拓扑图、瓶颈分析，直观展示网络带宽使用情况</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>安全基准测试</h3>
+                    <p>CIS基准、自动化检测、合规报告，全面评估系统安全合规性</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>文件翻译</h3>
+                    <p>多语言文件翻译、格式保留、批量处理，AI驱动的智能翻译服务</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐳</div>
+                    <h3>Docker Swarm管理</h3>
+                    <p>集群管理、服务编排、负载均衡，企业级容器集群管理能力</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>统一备份网关</h3>
+                    <p>多源备份统一管理、增量备份、加密去重，一站式数据保护解决方案</p>
+                </div>
 
             </div>
         </div>
@@ -2090,21 +2140,21 @@
                 <div class="download-card">
                     <h3>Linux AMD64</h3>
                     <p class="download-size">55MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.557.0/nasd-linux-amd64" target="_blank" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.558.0/nasd-linux-amd64" target="_blank" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARM64</h3>
                     <p class="download-size">52MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.557.0/nasd-linux-arm64" target="_blank" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.558.0/nasd-linux-arm64" target="_blank" class="btn btn-primary">
                         下载
                     </a>
                 </div>
                 <div class="download-card">
                     <h3>Linux ARMv7</h3>
                     <p class="download-size">53MB</p>
-                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.557.0/nasd-linux-arm" target="_blank" class="btn btn-primary">
+                    <a href="https://github.com/crazyqin/nas-os/releases/download/v2.558.0/nasd-linux-arm" target="_blank" class="btn btn-primary">
                         下载
                     </a>
                 </div>
@@ -2112,12 +2162,12 @@
             <div class="install-command">
                 <h3>快速安装</h3>
                 <pre><code># 下载并运行
-wget https://github.com/crazyqin/nas-os/releases/download/v2.557.0/nasd-linux-amd64
+wget https://github.com/crazyqin/nas-os/releases/download/v2.558.0/nasd-linux-amd64
 chmod +x nasd-linux-amd64
 sudo ./nasd-linux-amd64
 
 # Docker
-docker pull ghcr.io/crazyqin/nas-os:v2.557.0
+docker pull ghcr.io/crazyqin/nas-os:v2.558.0
 
 # 访问 Web 界面
 # http://localhost:8080</code></pre>
