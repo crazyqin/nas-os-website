@@ -15,17 +15,18 @@
 <body>
 
 <!-- Nav -->
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg>
       <span>NAS-OS</span>
     </a>
     <div class="nav-links">
       <a href="#features">功能</a>
       <a href="#download">下载</a>
       <a href="#faq">FAQ</a>
-      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="nav-gh">GitHub</a>
+      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="nav-gh">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
     </div>
   </div>
 </nav>
@@ -38,10 +39,11 @@
     <p class="hero-sub">基于 Go 的轻量级 NAS 系统。存储管理、文件共享、Docker 应用、AI 助手——一个二进制文件，5 分钟部署。</p>
     <div class="hero-cta">
       <a href="#download" class="btn btn-primary">开始使用 →</a>
-      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="btn btn-ghost">查看源码</a>
+      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="margin-right:7px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>查看源码</a>
     </div>
     <div class="hero-cli">
-      <div class="cli-line"><span class="cli-prompt">$</span> <span class="cli-cmd">curl -fsSL https://nas-os.io/install.sh | sh</span></div>
+      <div class="cli-line"><span class="cli-prompt">$</span><span class="cli-cmd">curl -fsSL https://nas-os.io/install.sh | sh</span></div>
     </div>
   </div>
 </section>
@@ -64,42 +66,42 @@
     <div class="feature-grid">
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
         </div>
         <h3>存储管理</h3>
         <p>btrfs / ZFS 双引擎。子卷、快照、RAID、在线扩容，数据完整性校验。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
         </div>
         <h3>文件共享</h3>
-        <p>SMB / NFS / FTP / SFTP / WebDAV 全协议支持。SMB Multichannel 多通道聚合。</p>
+        <p>SMB / NFS / FTP / SFTP / WebDAV 全协议。SMB Multichannel 多通道聚合。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 9h6v6H9z"/></svg>
         </div>
         <h3>Docker 应用商店</h3>
         <p>一键安装，自动更新。容器编排、健康监控、故障自动恢复。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg>
         </div>
         <h3>安全防护</h3>
         <p>RBAC 权限、双因素认证、ML 勒索检测、全卷加密、WORM 合规存储。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </div>
         <h3>AI 智能助手</h3>
         <p>统一 AI 推理平台。以文搜图、智能文件整理、存储优化建议、自然语言管理。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
         </div>
         <h3>高性能</h3>
         <p>NVMe-oF RDMA、块级备份、智能数据分层、QUIC 高速传输。Go 原生性能。</p>
@@ -115,24 +117,24 @@
     <p class="section-desc">选择你的平台，一个命令搞定。</p>
     <div class="dl-grid">
       <div class="dl-card">
-        <div class="dl-os">🐧 Linux</div>
+        <div class="dl-os">Linux</div>
         <div class="dl-arch">AMD64 · ARM64 · ARMv7</div>
         <pre><code>curl -fsSL https://nas-os.io/install.sh | sh</code></pre>
       </div>
       <div class="dl-card">
-        <div class="dl-os">🍎 macOS</div>
+        <div class="dl-os">macOS</div>
         <div class="dl-arch">Intel · Apple Silicon</div>
         <pre><code>brew tap crazyqin/nas-os
 brew install nas-os</code></pre>
       </div>
       <div class="dl-card">
-        <div class="dl-os">🪟 Windows</div>
+        <div class="dl-os">Windows</div>
         <div class="dl-arch">AMD64</div>
         <pre><code>scoop bucket add nas-os
 scoop install nas-os</code></pre>
       </div>
       <div class="dl-card">
-        <div class="dl-os">🐳 Docker</div>
+        <div class="dl-os">Docker</div>
         <div class="dl-arch">全平台通用</div>
         <pre><code>docker run -d --name nas-os \
   -p 8080:8080 crazyqin/nas-os</code></pre>
@@ -172,17 +174,19 @@ scoop install nas-os</code></pre>
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-logo">NAS-OS</span>
-      <span class="footer-tag">轻量级开源 NAS 系统</span>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">NAS-OS</span>
+        <span class="footer-tag">轻量级开源 NAS 系统</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/crazyqin/nas-os/issues" target="_blank" rel="noopener">Issues</a>
+        <a href="https://github.com/crazyqin/nas-os/blob/main/docs/USER_GUIDE.md" target="_blank" rel="noopener">文档</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noopener">Releases</a>
-      <a href="https://github.com/crazyqin/nas-os/issues" target="_blank" rel="noopener">Issues</a>
-      <a href="https://github.com/crazyqin/nas-os/blob/main/docs/USER_GUIDE.md" target="_blank" rel="noopener">文档</a>
-    </div>
-    <div class="footer-copy">MIT License · Made with Go</div>
+    <div class="footer-bottom">MIT License · Built with Go · © 2026 NAS-OS</div>
   </div>
 </footer>
 
