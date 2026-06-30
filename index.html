@@ -26,6 +26,7 @@
       <a href="#download">下载</a>
       <a href="#contact">联系</a>
       <a href="#faq">FAQ</a>
+      <a href="#changelog">更新</a>
       <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="nav-gh">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
     </div>
@@ -35,7 +36,7 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="badge">v3.1.0 · 架构重构正式版</div>
+    <div class="badge">v3.4.0 · 竞品对标功能升级</div>
     <h1>你的数据，<br>由你掌控。</h1>
     <p class="hero-sub">基于 Go 的轻量级 NAS 系统。存储管理、文件共享、Docker 应用、AI 助手——一个二进制文件，5 分钟部署。</p>
     <div class="hero-cta">
@@ -52,9 +53,9 @@
 <!-- Stats -->
 <section class="stats">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-num">684</span><span class="stat-label">模块</span></div>
-    <div class="stat"><span class="stat-num">149万</span><span class="stat-label">行代码</span></div>
-    <div class="stat"><span class="stat-num">845</span><span class="stat-label">测试文件</span></div>
+    <div class="stat"><span class="stat-num">720</span><span class="stat-label">模块</span></div>
+    <div class="stat"><span class="stat-num">161万</span><span class="stat-label">行代码</span></div>
+    <div class="stat"><span class="stat-num">893</span><span class="stat-label">测试文件</span></div>
     <div class="stat"><span class="stat-num">82%</span><span class="stat-label">测试覆盖</span></div>
   </div>
 </section>
@@ -70,14 +71,14 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
         </div>
         <h3>存储管理</h3>
-        <p>btrfs / ZFS 双引擎。子卷、快照、RAID、在线扩容，数据完整性校验。</p>
+        <p>btrfs / ZFS 双引擎。子卷、快照、RAID、在线扩容、数据分层冷热迁移。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
         </div>
         <h3>文件共享</h3>
-        <p>SMB / NFS / FTP / SFTP / WebDAV 全协议。SMB Multichannel 多通道聚合。</p>
+        <p>SMB / NFS / FTP / SFTP / WebDAV 全协议。SMB HA 故障转移、Multichannel 多通道聚合。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
@@ -91,7 +92,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg>
         </div>
         <h3>安全防护</h3>
-        <p>RBAC 权限、双因素认证、ML 勒索检测、全卷加密、WORM 合规存储。</p>
+        <p>RBAC 权限、双因素认证、ML 勒索检测、弹性存储加密、WORM 合规、邮件审核。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
@@ -147,6 +148,34 @@ scoop install nas-os</code></pre>
   </div>
 </section>
 
+
+<!-- Changelog -->
+<section id="changelog" class="faq">
+  <div class="section-inner faq-inner">
+    <h2 class="section-title">更新日志</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>v3.4.0 — 竞品对标功能升级（2026-06-29）</summary>
+        <p>SMB 有状态 HA 故障转移 · 数据分层自定义规则 · 邮件 OAuth 通知 · WebSocket API 现代化（JSON-RPC 2.0）· 弹性存储加密 · 邮件审核机制</p>
+      </details>
+      <details class="faq-item">
+        <summary>v3.3.0 — TrueSearch / FileRequest 安全 / 加密 PDF 预览（2026-06-29）</summary>
+        <p>TrueSearch 增强搜索 · FileRequest 安全强化 · 加密 PDF 预览支持</p>
+      </details>
+      <details class="faq-item">
+        <summary>v3.2.0 — 6 个新模块（2026-06-28）</summary>
+        <p>API 代理 · 容器故障转移 · 磁盘洞察 · 局域网流媒体中心 · 媒体刮削器 · 隐私代理</p>
+      </details>
+      <details class="faq-item">
+        <summary>v3.1.0 — 架构重构稳定版（2026-06-26）</summary>
+        <p>3.0 架构重构稳定化，补齐 16 个新模块测试，修复编译兼容与测试稳定性问题。</p>
+      </details>
+    </div>
+    <div class="dl-more">
+      <a href="https://github.com/crazyqin/nas-os/blob/main/CHANGELOG.md" target="_blank" rel="noopener">查看完整更新日志 →</a>
+    </div>
+  </div>
+</section>
 <!-- FAQ -->
 <section id="faq" class="faq">
   <div class="section-inner faq-inner">
