@@ -1,48 +1,41 @@
-// NAS-OS — refined minimal JS
+const root = document.documentElement;
+const header = document.querySelector('.site-header');
+const toggle = document.querySelector('[data-theme-toggle]');
 
-// Nav border on scroll
-const nav = document.getElementById('nav');
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      nav.classList.toggle('scrolled', window.scrollY > 8);
-      ticking = false;
-    });
-    ticking = true;
-  }
+const storedTheme = localStorage.getItem('nas-os-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+setTheme(initialTheme);
+
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  if (toggle) toggle.textContent = theme === 'dark' ? '☀' : '☾';
+  localStorage.setItem('nas-os-theme', theme);
+}
+
+toggle?.addEventListener('click', () => {
+  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
 });
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); }
+const elevateHeader = () => {
+  header?.setAttribute('data-elevated', window.scrollY > 12 ? 'true' : 'false');
+};
+elevateHeader();
+window.addEventListener('scroll', elevateHeader, { passive: true });
+
+const revealItems = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.12 });
+
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 35, 180)}ms`;
+  observer.observe(item);
 });
 
-// Stat counter animation
-const statsObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    document.querySelectorAll('.stat-num').forEach(el => {
-      const text = el.textContent;
-      const num = parseFloat(text.replace(/[^0-9.]/g, ''));
-      if (!num || text.includes('万')) return;
-      let current = 0;
-      const duration = 1000;
-      const start = performance.now();
-      const animate = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const val = Math.floor(num * eased);
-        el.textContent = val.toLocaleString();
-        if (progress < 1) requestAnimationFrame(animate);
-        else el.textContent = text;
-      };
-      requestAnimationFrame(animate);
-    });
-    statsObserver.disconnect();
-  }
-}, { threshold: 0.3 });
-const statsSection = document.querySelector('.stats');
-if (statsSection) statsObserver.observe(statsSection);
+console.log('NAS-OS Website refined ✨');

@@ -1,260 +1,151 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NAS-OS — 轻量级开源 NAS 系统</title>
-  <meta name="description" content="基于 Go 的轻量级 NAS 系统。btrfs/ZFS 存储管理、Docker 应用商店、SMB/NFS 文件共享、AI 智能助手。5 分钟部署你的私有云。">
-  <meta name="keywords" content="NAS,开源NAS,NAS-OS,轻量级NAS,私有云,Go NAS,btrfs,ZFS">
-  <meta property="og:title" content="NAS-OS — 轻量级开源 NAS 系统">
-  <meta property="og:description" content="基于 Go 的轻量级 NAS 系统，5 分钟部署你的私有云。">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>NAS-OS｜小而美的私有云系统</title>
+  <meta name="description" content="NAS-OS 是一个轻量、精致、可自托管的私有云与 NAS 系统。5 分钟部署，覆盖文件共享、备份、相册、Docker 应用、权限、安全与监控。" />
+  <meta property="og:title" content="NAS-OS｜小而美的私有云系统" />
+  <meta property="og:description" content="轻量部署，精致体验，把闲置硬件变成可靠的家庭/团队私有云。" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
 
-<!-- Nav -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg>
+  <header class="site-header" data-elevated="false">
+    <a class="brand" href="#top" aria-label="NAS-OS 首页">
+      <span class="brand-mark" aria-hidden="true">◈</span>
       <span>NAS-OS</span>
     </a>
-    <div class="nav-links">
-      <a href="#features">功能</a>
-      <a href="#download">下载</a>
-      <a href="#contact">联系</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#features">亮点</a>
+      <a href="#experience">体验</a>
+      <a href="#install">安装</a>
       <a href="#faq">FAQ</a>
-      <a href="#changelog">更新</a>
-      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="nav-gh">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
-    </div>
-  </div>
-</nav>
+      <a class="nav-github" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="切换深浅色" data-theme-toggle>☾</button>
+  </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="badge">v3.9.0 · 竞品对标与差异化能力</div>
-    <h1>你的数据，<br>由你掌控。</h1>
-    <p class="hero-sub">基于 Go 的轻量级 NAS 系统。存储管理、文件共享、Docker 应用、本地 AI 治理与不可变保护——一个二进制文件，5 分钟部署。</p>
-    <div class="hero-cta">
-      <a href="#download" class="btn btn-primary">开始使用 →</a>
-      <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener" class="btn btn-ghost">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="margin-right:7px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>查看源码</a>
-    </div>
-    <div class="hero-cli">
-      <div class="cli-line"><span class="cli-prompt">$</span><span class="cli-cmd">curl -fsSL https://nas-os.dev/install.sh | sh</span></div>
-    </div>
-  </div>
-</section>
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Private cloud, beautifully simple</p>
+        <h1>把一台小机器，变成你的精致私有云。</h1>
+        <p class="hero-text">NAS-OS 专注家庭与小团队：文件、相册、备份、容器与安全管理都在一个轻巧界面里。少一点复杂，多一点可靠。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">免费下载</a>
+          <a class="button secondary" href="#install">5 分钟开始</a>
+        </div>
+        <div class="hero-notes" aria-label="产品特点">
+          <span>Go 驱动</span>
+          <span>Docker ready</span>
+          <span>AMD64 / ARM64</span>
+        </div>
+      </div>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat"><span class="stat-num">736</span><span class="stat-label">模块</span></div>
-    <div class="stat"><span class="stat-num">178万</span><span class="stat-label">总行数</span></div>
-    <div class="stat"><span class="stat-num">958</span><span class="stat-label">测试文件</span></div>
-    <div class="stat"><span class="stat-num">82%</span><span class="stat-label">测试覆盖</span></div>
-  </div>
-</section>
+      <div class="device-card reveal" aria-label="NAS-OS 产品预览">
+        <div class="window-bar"><span></span><span></span><span></span></div>
+        <div class="dashboard">
+          <div class="dash-header">
+            <div>
+              <p>Storage</p>
+              <strong>12.4 TB</strong>
+            </div>
+            <span class="status-pill">Healthy</span>
+          </div>
+          <div class="capacity-ring" aria-hidden="true"><span>68%</span></div>
+          <div class="metric-grid">
+            <div><small>备份</small><b>已同步</b></div>
+            <div><small>快照</small><b>24 个</b></div>
+            <div><small>容器</small><b>8 运行</b></div>
+            <div><small>告警</small><b>0 项</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Features -->
-<section id="features" class="features">
-  <div class="section-inner">
-    <h2 class="section-title">少即是多</h2>
-    <p class="section-desc">不堆砌功能，只做核心的事情，做好。</p>
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-        </div>
-        <h3>存储管理</h3>
-        <p>btrfs / ZFS 双引擎。子卷、快照、RAID、在线扩容、数据分层冷热迁移。</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-        </div>
-        <h3>文件共享</h3>
-        <p>SMB / NFS / FTP / SFTP / WebDAV 全协议。SMB HA 故障转移、Multichannel 多通道聚合。</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 9h6v6H9z"/></svg>
-        </div>
-        <h3>Docker 应用商店</h3>
-        <p>一键安装，自动更新。容器编排、健康监控、故障自动恢复。</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg>
-        </div>
-        <h3>安全防护</h3>
-        <p>RBAC 权限、双因素认证、ML 勒索检测、弹性存储加密、WORM 合规、不可变快照。</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </div>
-        <h3>AI 智能助手</h3>
-        <p>统一 AI 推理平台。本地语义搜索治理、脱敏返回、用途审计、MCP 工具链。</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
-        </div>
-        <h3>高性能</h3>
-        <p>NVMe-oF RDMA、块级备份、网络 FEC 推荐、LXC 迁移计划、QUIC 高速传输。</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="proof section reveal" aria-label="项目数据">
+      <div><strong>5 min</strong><span>快速部署</span></div>
+      <div><strong>6+</strong><span>主流共享协议</span></div>
+      <div><strong>1 UI</strong><span>统一管理入口</span></div>
+      <div><strong>Open</strong><span>开放自托管</span></div>
+    </section>
 
-<!-- Download -->
-<section id="download" class="download">
-  <div class="section-inner">
-    <h2 class="section-title">立即体验</h2>
-    <p class="section-desc">选择你的平台，一个命令搞定。</p>
-    <div class="dl-grid">
-      <div class="dl-card">
-        <div class="dl-os">Linux</div>
-        <div class="dl-arch">AMD64 · ARM64 · ARMv7</div>
-        <pre><code>curl -fsSL https://nas-os.dev/install.sh | sh</code></pre>
+    <section id="features" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Core features</p>
+        <h2>只保留真正常用的能力。</h2>
+        <p>不是把功能写满屏幕，而是把每天会用的事情做顺手。</p>
       </div>
-      <div class="dl-card">
-        <div class="dl-os">macOS</div>
-        <div class="dl-arch">Intel · Apple Silicon</div>
-        <pre><code>brew tap crazyqin/nas-os
-brew install nas-os</code></pre>
+      <div class="feature-grid">
+        <article class="feature-card reveal"><span>01</span><h3>文件与共享</h3><p>SMB、NFS、WebDAV、FTP/SFTP，多端访问，权限清晰。</p></article>
+        <article class="feature-card reveal"><span>02</span><h3>备份与快照</h3><p>定时备份、版本保留、快照回滚，让误删和故障都有退路。</p></article>
+        <article class="feature-card reveal"><span>03</span><h3>相册与媒体</h3><p>照片时间线、媒体索引、智能整理，家庭资料更好找。</p></article>
+        <article class="feature-card reveal"><span>04</span><h3>Docker 应用</h3><p>常用服务一键部署，容器状态、日志、更新集中管理。</p></article>
+        <article class="feature-card reveal"><span>05</span><h3>安全与权限</h3><p>RBAC、双因素认证、审计日志、告警策略，默认更安心。</p></article>
+        <article class="feature-card reveal"><span>06</span><h3>健康与监控</h3><p>磁盘、温度、容量、网络与服务状态，一眼看懂。</p></article>
       </div>
-      <div class="dl-card">
-        <div class="dl-os">Windows</div>
-        <div class="dl-arch">AMD64</div>
-        <pre><code>scoop bucket add nas-os
-scoop install nas-os</code></pre>
-      </div>
-      <div class="dl-card">
-        <div class="dl-os">Docker</div>
-        <div class="dl-arch">全平台通用</div>
-        <pre><code>docker run -d --name nas-os \
-  -p 8080:8080 crazyqin/nas-os</code></pre>
-      </div>
-    </div>
-    <div class="dl-more">
-      <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noopener">查看全部 Release →</a>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Changelog -->
-<section id="changelog" class="faq">
-  <div class="section-inner faq-inner">
-    <h2 class="section-title">更新日志</h2>
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>v3.9.0 — 竞品对标与差异化能力（2026-07-03）</summary>
-        <p>DSM 7.4、TrueNAS 26、fnOS、QNAP h6.0 对标 · 不可变快照 · 存储效率与分层 · 媒体与远程访问</p>
-      </details>
-      <details class="faq-item">
-        <summary>v3.8.0 — 智能运维与本地 AI 治理（2026-07-02）</summary>
-        <p>网络 FEC 推荐与配置意图 · 重启原因历史 · 本地 AI 语义搜索治理 · LXC 冷/热/在线迁移计划</p>
-      </details>
-      <details class="faq-item">
-        <summary>v3.7.0 — 存储与应用生态增强（2026-07-02）</summary>
-        <p>RAIDZ 逐盘扩展 · 存储 ROI 可视化 · 智能海报墙 · 应用中心评价 · NFS Kerberos 认证审计 · Security Advisor</p>
-      </details>
-      <details class="faq-item">
-        <summary>v3.4.0 — 竞品对标功能升级（2026-06-29）</summary>
-        <p>SMB 有状态 HA 故障转移 · 数据分层自定义规则 · 邮件 OAuth 通知 · WebSocket API 现代化 · 弹性存储加密 · 邮件审核机制</p>
-      </details>
-      <details class="faq-item">
-        <summary>v3.1.0 — 架构重构稳定版（2026-06-26）</summary>
-        <p>3.0 架构重构稳定化，补齐 16 个新模块测试，修复编译兼容与测试稳定性问题。</p>
-      </details>
-    </div>
-    <div class="dl-more">
-      <a href="https://github.com/crazyqin/nas-os/blob/master/CHANGELOG.md" target="_blank" rel="noopener">查看完整更新日志 →</a>
-    </div>
-  </div>
-</section>
-<!-- FAQ -->
-<section id="faq" class="faq">
-  <div class="section-inner faq-inner">
-    <h2 class="section-title">常见问题</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>NAS-OS 和群晖/TrueNAS 有什么区别？</summary>
-        <p>NAS-OS 是单二进制 Go 程序，无需定制硬件，5 分钟部署。群晖需要买它的机器，TrueNAS 基于 FreeBSD/ZFS 较重。NAS-OS 追求轻量极致——一个文件，搞定一切。</p>
-      </details>
-      <details class="faq-item">
-        <summary>支持什么文件系统？</summary>
-        <p>btrfs 和 ZFS 双引擎支持。btrfs 适合轻量场景，ZFS 适合企业级需求。子卷、快照、RAID、在线扩容、数据自愈——全功能覆盖。</p>
-      </details>
-      <details class="faq-item">
-        <summary>硬件要求？</summary>
-        <p>最低 1GB 内存 + 任意 ARM/x86 处理器即可运行。树莓派、旧笔记本、迷你主机都能用。推荐 2GB+ 内存用于运行 Docker 应用。</p>
-      </details>
-      <details class="faq-item">
-        <summary>开源协议？</summary>
-        <p>MIT 协议，完全开源。商业使用、修改、分发均无限制。</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="contact">
-  <div class="section-inner">
-    <h2 class="section-title">保持联系</h2>
-    <p class="section-desc">有问题？建议？欢迎随时联系。</p>
-    <div class="contact-grid">
-      <a href="mailto:support@nas-os.dev" class="contact-card">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 6 10-6"/></svg>
-        </div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">support@nas-os.dev</div>
-      </a>
-      <a href="https://github.com/crazyqin/nas-os/issues" target="_blank" rel="noopener" class="contact-card">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        </div>
-        <div class="contact-label">Issues</div>
-        <div class="contact-value">提交 Bug / 建议功能</div>
-      </a>
-      <a href="https://github.com/crazyqin/nas-os/discussions" target="_blank" rel="noopener" class="contact-card">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="contact-label">Discussions</div>
-        <div class="contact-value">社区讨论</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="footer-logo">NAS-OS</span>
-        <span class="footer-tag">轻量级开源 NAS 系统</span>
+    <section id="experience" class="section split">
+      <div class="section-heading left reveal">
+        <p class="eyebrow">Design details</p>
+        <h2>精致感来自细节。</h2>
+        <p>界面克制、文案简短、状态明确。用户不需要读说明书，也知道下一步该做什么。</p>
       </div>
-      <div class="footer-links">
-        <a href="https://github.com/crazyqin/nas-os" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noopener">Releases</a>
-        <a href="mailto:support@nas-os.dev">Email</a>
-        <a href="https://github.com/crazyqin/nas-os/blob/master/docs/USER_GUIDE.md" target="_blank" rel="noopener">文档</a>
+      <div class="detail-list reveal">
+        <div><b>轻</b><span>静态官网无框架依赖，加载快，维护成本低。</span></div>
+        <div><b>稳</b><span>核心入口不绕路：下载、安装、文档、GitHub。</span></div>
+        <div><b>美</b><span>柔和渐变、微交互、卡片层级、深浅色自动适配。</span></div>
+        <div><b>准</b><span>减少夸张口号，聚焦 NAS 用户真正关心的问题。</span></div>
       </div>
-    </div>
-    <div class="footer-bottom">MIT License · Built with Go · © 2026 NAS-OS</div>
-  </div>
-</footer>
+    </section>
 
-<script src="js/main.js"></script>
+    <section id="install" class="section install reveal">
+      <div>
+        <p class="eyebrow">Quick start</p>
+        <h2>三步启动 NAS-OS</h2>
+      </div>
+      <ol class="steps">
+        <li><span>1</span><div><h3>下载镜像</h3><p>从 GitHub Releases 获取适合设备架构的版本。</p></div></li>
+        <li><span>2</span><div><h3>启动服务</h3><p>使用二进制或 Docker 部署，浏览器打开管理界面。</p></div></li>
+        <li><span>3</span><div><h3>创建共享</h3><p>添加磁盘、设置用户权限，开始同步文件与照片。</p></div></li>
+      </ol>
+      <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">查看最新版本</a>
+    </section>
+
+    <section id="faq" class="section faq">
+      <div class="section-heading reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <details class="reveal" open><summary>NAS-OS 适合谁？</summary><p>适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
+        <details class="reveal"><summary>一定要很高配置吗？</summary><p>不需要。轻量部署是核心目标，普通 x86 或 ARM64 设备即可起步。</p></details>
+        <details class="reveal"><summary>和群晖/TrueNAS 有什么区别？</summary><p>NAS-OS 更强调开放、轻量、可折腾，同时把常用 NAS 能力收敛到更简单的体验里。</p></details>
+      </div>
+    </section>
+
+    <section class="section cta reveal">
+      <p class="eyebrow">Ready?</p>
+      <h2>从一块硬盘开始，拥有自己的云。</h2>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">去 GitHub</a>
+        <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">下载 Release</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 NAS-OS</span>
+    <span>Made for private clouds with care.</span>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
