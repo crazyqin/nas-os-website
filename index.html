@@ -17,38 +17,38 @@
   <div class="ambient ambient-b"></div>
 
   <header class="site-header" data-elevated="false">
-    <a class="brand" href="#top" aria-label="NAS-OS 首页">
+    <a class="brand" href="#top" aria-label="NAS-OS 首页" data-i18n-attr="aria-label:brandAria">
       <span class="brand-mark" aria-hidden="true">◈</span>
       <span>NAS-OS</span>
     </a>
-    <nav class="nav" aria-label="主导航">
-      <a href="#features">亮点</a>
-      <a href="#experience">体验</a>
-      <a href="#install">安装</a>
+    <nav class="nav" aria-label="主导航" data-i18n-attr="aria-label:navAria">
+      <a href="#features" data-i18n="navFeatures">亮点</a>
+      <a href="#experience" data-i18n="navExperience">体验</a>
+      <a href="#install" data-i18n="navInstall">安装</a>
       <a href="#faq">FAQ</a>
       <a class="nav-github" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="切换深浅色" data-theme-toggle>☾</button>
+    <button class="theme-toggle" type="button" aria-label="切换深浅色" data-i18n-attr="aria-label:themeAria" data-theme-toggle>☾</button>
   </header>
 
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Private cloud, beautifully simple</p>
-        <h1>把一台小机器，变成你的精致私有云。</h1>
-        <p class="hero-text">NAS-OS 专注家庭与小团队：文件、相册、备份、容器与安全管理都在一个轻巧界面里。少一点复杂，多一点可靠。</p>
+        <p class="eyebrow" data-i18n="heroEyebrow">Private cloud, beautifully simple</p>
+        <h1 data-i18n="heroTitle">精致私有云。</h1>
+        <p class="hero-text" data-i18n="heroText">NAS-OS 专注家庭与小团队：文件、相册、备份、容器与安全管理，都在一个轻巧界面里。</p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">免费下载</a>
-          <a class="button secondary" href="#install">5 分钟开始</a>
+          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer" data-i18n="download">免费下载</a>
+          <a class="button secondary" href="#install" data-i18n="start">5 分钟开始</a>
         </div>
-        <div class="hero-notes" aria-label="产品特点">
-          <span>Go 驱动</span>
+        <div class="hero-notes" aria-label="产品特点" data-i18n-attr="aria-label:notesAria">
+          <span data-i18n="noteGo">Go 驱动</span>
           <span>Docker ready</span>
           <span>AMD64 / ARM64</span>
         </div>
       </div>
 
-      <div class="device-card reveal" aria-label="NAS-OS 产品预览">
+      <div class="device-card reveal" aria-label="NAS-OS 产品预览" data-i18n-attr="aria-label:previewAria">
         <div class="window-bar"><span></span><span></span><span></span></div>
         <div class="dashboard">
           <div class="dash-header">
@@ -56,94 +56,94 @@
               <p>Storage</p>
               <strong>12.4 TB</strong>
             </div>
-            <span class="status-pill">Healthy</span>
+            <span class="status-pill" data-i18n="healthy">Healthy</span>
           </div>
           <div class="capacity-ring" aria-hidden="true"><span>68%</span></div>
           <div class="metric-grid">
-            <div><small>备份</small><b>已同步</b></div>
-            <div><small>快照</small><b>24 个</b></div>
-            <div><small>容器</small><b>8 运行</b></div>
-            <div><small>告警</small><b>0 项</b></div>
+            <div><small data-i18n="backup">备份</small><b data-i18n="synced">已同步</b></div>
+            <div><small data-i18n="snapshot">快照</small><b data-i18n="snapshotsCount">24 个</b></div>
+            <div><small data-i18n="containers">容器</small><b data-i18n="runningCount">8 运行</b></div>
+            <div><small data-i18n="alerts">告警</small><b data-i18n="zeroItems">0 项</b></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="proof section reveal" aria-label="项目数据">
-      <div><strong>5 min</strong><span>快速部署</span></div>
-      <div><strong>6+</strong><span>主流共享协议</span></div>
-      <div><strong>1 UI</strong><span>统一管理入口</span></div>
-      <div><strong>Open</strong><span>开放自托管</span></div>
+    <section class="proof section reveal" aria-label="项目数据" data-i18n-attr="aria-label:proofAria">
+      <div><strong>5 min</strong><span data-i18n="proofDeploy">快速部署</span></div>
+      <div><strong>6+</strong><span data-i18n="proofProtocols">主流共享协议</span></div>
+      <div><strong>1 UI</strong><span data-i18n="proofEntry">统一管理入口</span></div>
+      <div><strong>Open</strong><span data-i18n="proofOpen">开放自托管</span></div>
     </section>
 
     <section id="features" class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">Core features</p>
-        <h2>只保留真正常用的能力。</h2>
-        <p>不是把功能写满屏幕，而是把每天会用的事情做顺手。</p>
+        <h2 data-i18n="featuresTitle">只保留真正常用的能力。</h2>
+        <p data-i18n="featuresText">不是把功能写满屏幕，而是把每天会用的事情做顺手。</p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card reveal"><span>01</span><h3>文件与共享</h3><p>SMB、NFS、WebDAV、FTP/SFTP，多端访问，权限清晰。</p></article>
-        <article class="feature-card reveal"><span>02</span><h3>备份与快照</h3><p>定时备份、版本保留、快照回滚，让误删和故障都有退路。</p></article>
-        <article class="feature-card reveal"><span>03</span><h3>相册与媒体</h3><p>照片时间线、媒体索引、智能整理，家庭资料更好找。</p></article>
-        <article class="feature-card reveal"><span>04</span><h3>Docker 应用</h3><p>常用服务一键部署，容器状态、日志、更新集中管理。</p></article>
-        <article class="feature-card reveal"><span>05</span><h3>安全与权限</h3><p>RBAC、双因素认证、审计日志、告警策略，默认更安心。</p></article>
-        <article class="feature-card reveal"><span>06</span><h3>健康与监控</h3><p>磁盘、温度、容量、网络与服务状态，一眼看懂。</p></article>
+        <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">文件与共享</h3><p data-i18n="f1Text">SMB、NFS、WebDAV、FTP/SFTP，多端访问，权限清晰。</p></article>
+        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">备份与快照</h3><p data-i18n="f2Text">定时备份、版本保留、快照回滚，让误删和故障都有退路。</p></article>
+        <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">相册与媒体</h3><p data-i18n="f3Text">照片时间线、媒体索引、智能整理，家庭资料更好找。</p></article>
+        <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">Docker 应用</h3><p data-i18n="f4Text">常用服务一键部署，容器状态、日志、更新集中管理。</p></article>
+        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">安全与权限</h3><p data-i18n="f5Text">RBAC、双因素认证、审计日志、告警策略，默认更安心。</p></article>
+        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">健康与监控</h3><p data-i18n="f6Text">磁盘、温度、容量、网络与服务状态，一眼看懂。</p></article>
       </div>
     </section>
 
     <section id="experience" class="section split">
       <div class="section-heading left reveal">
         <p class="eyebrow">Design details</p>
-        <h2>精致感来自细节。</h2>
-        <p>界面克制、文案简短、状态明确。用户不需要读说明书，也知道下一步该做什么。</p>
+        <h2 data-i18n="detailsTitle">精致感来自细节。</h2>
+        <p data-i18n="detailsText">界面克制、文案简短、状态明确。用户不需要读说明书，也知道下一步该做什么。</p>
       </div>
       <div class="detail-list reveal">
-        <div><b>轻</b><span>静态官网无框架依赖，加载快，维护成本低。</span></div>
-        <div><b>稳</b><span>核心入口不绕路：下载、安装、文档、GitHub。</span></div>
-        <div><b>美</b><span>柔和渐变、微交互、卡片层级、深浅色自动适配。</span></div>
-        <div><b>准</b><span>减少夸张口号，聚焦 NAS 用户真正关心的问题。</span></div>
+        <div><b data-i18n="d1Key">轻</b><span data-i18n="d1Text">静态官网无框架依赖，加载快，维护成本低。</span></div>
+        <div><b data-i18n="d2Key">稳</b><span data-i18n="d2Text">核心入口不绕路：下载、安装、文档、GitHub。</span></div>
+        <div><b data-i18n="d3Key">美</b><span data-i18n="d3Text">柔和渐变、微交互、卡片层级、深浅色适配。</span></div>
+        <div><b data-i18n="d4Key">准</b><span data-i18n="d4Text">减少夸张口号，聚焦 NAS 用户真正关心的问题。</span></div>
       </div>
     </section>
 
     <section id="install" class="section install reveal">
       <div>
         <p class="eyebrow">Quick start</p>
-        <h2>三步启动 NAS-OS</h2>
+        <h2 data-i18n="installTitle">三步启动 NAS-OS</h2>
       </div>
       <ol class="steps">
-        <li><span>1</span><div><h3>下载镜像</h3><p>从 GitHub Releases 获取适合设备架构的版本。</p></div></li>
-        <li><span>2</span><div><h3>启动服务</h3><p>使用二进制或 Docker 部署，浏览器打开管理界面。</p></div></li>
-        <li><span>3</span><div><h3>创建共享</h3><p>添加磁盘、设置用户权限，开始同步文件与照片。</p></div></li>
+        <li><span>1</span><div><h3 data-i18n="s1Title">下载镜像</h3><p data-i18n="s1Text">从 GitHub Releases 获取适合设备架构的版本。</p></div></li>
+        <li><span>2</span><div><h3 data-i18n="s2Title">启动服务</h3><p data-i18n="s2Text">使用二进制或 Docker 部署，浏览器打开管理界面。</p></div></li>
+        <li><span>3</span><div><h3 data-i18n="s3Title">创建共享</h3><p data-i18n="s3Text">添加磁盘、设置用户权限，开始同步文件与照片。</p></div></li>
       </ol>
-      <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">查看最新版本</a>
+      <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer" data-i18n="latest">查看最新版本</a>
     </section>
 
     <section id="faq" class="section faq">
       <div class="section-heading reveal">
         <p class="eyebrow">FAQ</p>
-        <h2>常见问题</h2>
+        <h2 data-i18n="faqTitle">常见问题</h2>
       </div>
       <div class="faq-list">
-        <details class="reveal" open><summary>NAS-OS 适合谁？</summary><p>适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
-        <details class="reveal"><summary>一定要很高配置吗？</summary><p>不需要。轻量部署是核心目标，普通 x86 或 ARM64 设备即可起步。</p></details>
-        <details class="reveal"><summary>和群晖/TrueNAS 有什么区别？</summary><p>NAS-OS 更强调开放、轻量、可折腾，同时把常用 NAS 能力收敛到更简单的体验里。</p></details>
+        <details class="reveal" open><summary data-i18n="q1">NAS-OS 适合谁？</summary><p data-i18n="a1">适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
+        <details class="reveal"><summary data-i18n="q2">一定要很高配置吗？</summary><p data-i18n="a2">不需要。轻量部署是核心目标，普通 x86 或 ARM64 设备即可起步。</p></details>
+        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开放、轻量、可折腾，同时把常用 NAS 能力收敛到更简单的体验里。</p></details>
       </div>
     </section>
 
     <section class="section cta reveal">
       <p class="eyebrow">Ready?</p>
-      <h2>从一块硬盘开始，拥有自己的云。</h2>
+      <h2 data-i18n="ctaTitle">从一块硬盘开始，拥有自己的云。</h2>
       <div class="hero-actions">
-        <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">去 GitHub</a>
-        <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer">下载 Release</a>
+        <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer" data-i18n="github">去 GitHub</a>
+        <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer" data-i18n="release">下载 Release</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <span>© 2026 NAS-OS</span>
-    <span>Made for private clouds with care.</span>
+    <span data-i18n="footer">Made for private clouds with care.</span>
   </footer>
 
   <script src="js/main.js"></script>
