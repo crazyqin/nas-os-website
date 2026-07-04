@@ -47,6 +47,11 @@ body {
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
+html[lang^="zh"] [lang="en"],
+html[lang^="en"] [lang="zh-CN"] { display: none !important; }
+
+html[lang^="en"] body { letter-spacing: -0.01em; }
+
 .ambient {
   position: fixed;
   width: 22rem;

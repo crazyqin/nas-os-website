@@ -208,6 +208,21 @@ const elevateHeader = () => {
 elevateHeader();
 window.addEventListener('scroll', elevateHeader, { passive: true });
 
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const id = link.getAttribute('href');
+    if (!id || id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    event.preventDefault();
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const offset = headerHeight + 30;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+    history.pushState(null, '', id);
+  });
+});
+
 const revealItems = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
