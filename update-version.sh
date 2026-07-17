@@ -5,8 +5,8 @@
 
 cd ~/projects/nas-os-website
 
-OLD_VERSION="${1:-v2.620.0}"
-NEW_VERSION="${2:-v3.1.0}"
+OLD_VERSION="${1:-v3.24.3}"
+NEW_VERSION="${2:-v3.24.3}"
 
 # 备份原文件
 cp index.html index.html.bak

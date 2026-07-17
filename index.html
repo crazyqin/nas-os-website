@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
   <title>NAS-OS｜小而美的私有云系统</title>
-  <meta name="description" content="NAS-OS 是一个轻量、精致、可自托管的私有云与 NAS 系统。5 分钟部署，覆盖文件共享、备份、相册、Docker 应用、权限、安全与监控。" />
+  <meta name="description" content="NAS-OS v3.24.3：默认 Core 五模块（身份/存储/网络/共享/系统），可选 Docker、相册、AI 与扩展。开源、轻量、可自托管的家用 NAS。" />
   <meta property="og:title" content="NAS-OS｜小而美的私有云系统" />
-  <meta property="og:description" content="轻量部署，精致体验，把闲置硬件变成可靠的家庭/团队私有云。" />
+  <meta property="og:description" content="v3.24.3 Stable — Core 默认交付，optional/extensions 按需开启。把闲置硬件变成可靠的家庭/团队私有云。" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="favicon.ico" />
@@ -23,7 +23,7 @@
     </a>
     <nav class="nav" aria-label="主导航" data-i18n-attr="aria-label:navAria">
       <a href="#features" data-i18n="navFeatures">亮点</a>
-      <a href="#experience" data-i18n="navExperience">体验</a>
+      <a href="#architecture" data-i18n="navArch">架构</a>
       <a href="#install" data-i18n="navInstall">安装</a>
       <a href="#faq">FAQ</a>
       <a class="nav-github" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">GitHub</a>
@@ -36,13 +36,14 @@
       <div class="hero-copy reveal">
         <p class="eyebrow"><span lang="zh-CN">精致、轻量、可自托管</span><span lang="en">Private cloud, beautifully simple</span></p>
         <h1><span lang="zh-CN">精致私有云。</span><span lang="en">A refined private cloud.</span></h1>
-        <p class="hero-text"><span lang="zh-CN">NAS-OS v3.18.0 带来 27 个新模块：NFS RDMA、iSCSI 硬件卸载、LXC/VM 恢复、SSO 身份中心、API 配额监控、Release 渠道管理与网络安全防护，面向团队与高性能存储场景继续进化。</span><span lang="en">NAS-OS v3.18.0 adds 27 new modules: NFS RDMA, iSCSI hardware offload, LXC/VM restore, SSO identity center, API quota monitoring, release channel management, and network security for team and high-performance storage workflows.</span></p>
+        <p class="hero-text"><span lang="zh-CN">NAS-OS v3.24.3 完成默认表面收敛：Core 五模块（身份 / 存储 / 网络 / 共享 / 系统）开箱即用；Docker、相册、AI、备份等按需开启。架构分层 Core · Extension · Lab，运行时诚实、安全默认更稳。</span><span lang="en">NAS-OS v3.24.3 ships a honest default surface: five Core modules (identity, storage, network, sharing, system) out of the box. Docker, photos, AI, and backups stay optional. Clear Core · Extension · Lab tiers and safer defaults.</span></p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer"><span lang="zh-CN">免费下载</span><span lang="en">Free download</span></a>
+          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer"><span lang="zh-CN">免费下载</span><span lang="en">Free download</span></a>
           <a class="button secondary" href="#install"><span lang="zh-CN">5 分钟开始</span><span lang="en">Start in 5 minutes</span></a>
         </div>
         <div class="hero-notes" aria-label="产品特点" data-i18n-attr="aria-label:notesAria">
-          <span data-i18n="noteGo">v3.18.0</span>
+          <span data-i18n="noteGo">v3.24.3</span>
+          <span>Core-first</span>
           <span>Docker ready</span>
           <span>AMD64 / ARM64</span>
         </div>
@@ -60,9 +61,9 @@
           </div>
           <div class="capacity-ring" aria-hidden="true"><span>68%</span></div>
           <div class="metric-grid">
-            <div><small data-i18n="backup">备份</small><b data-i18n="synced">已同步</b></div>
-            <div><small data-i18n="snapshot">快照</small><b data-i18n="snapshotsCount">24 个</b></div>
-            <div><small data-i18n="containers">容器</small><b data-i18n="runningCount">8 运行</b></div>
+            <div><small data-i18n="coreLabel">Core</small><b data-i18n="coreCount">5 模块</b></div>
+            <div><small data-i18n="snapshot">快照</small><b data-i18n="snapshotsCount">按卷管理</b></div>
+            <div><small data-i18n="shares">共享</small><b data-i18n="sharesStatus">SMB · NFS</b></div>
             <div><small data-i18n="alerts">告警</small><b data-i18n="zeroItems">0 项</b></div>
           </div>
         </div>
@@ -70,39 +71,39 @@
     </section>
 
     <section class="proof section reveal" aria-label="项目数据" data-i18n-attr="aria-label:proofAria">
-      <div><strong>5 min</strong><span data-i18n="proofDeploy">快速部署</span></div>
-      <div><strong>813</strong><span data-i18n="proofProtocols">内部模块</span></div>
-      <div><strong>1019</strong><span data-i18n="proofEntry">测试文件</span></div>
+      <div><strong>5</strong><span data-i18n="proofCore">Core 模块</span></div>
+      <div><strong>7</strong><span data-i18n="proofExt">可配 Extension</span></div>
+      <div><strong>1024</strong><span data-i18n="proofEntry">测试文件</span></div>
       <div><strong>Open</strong><span data-i18n="proofOpen">开放自托管</span></div>
     </section>
 
     <section id="features" class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">Core features</p>
-        <h2 data-i18n="featuresTitle">只保留真正常用的能力。</h2>
-        <p data-i18n="featuresText">不是把功能写满屏幕，而是把每天会用的事情做顺手。</p>
+        <h2 data-i18n="featuresTitle">默认只开真正核心的能力。</h2>
+        <p data-i18n="featuresText">不是把功能写满屏幕。默认 Core 开箱能管盘、共享、用户与健康；其余产品能力按需打开。</p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">文件与共享</h3><p data-i18n="f1Text">SMB、NFS、WebDAV、FTP/SFTP 与 WebShare，多端访问，外链可撤销。</p></article>
-        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">备份与快照</h3><p data-i18n="f2Text">定时备份、版本保留、快照调度、去重顾问、保留策略与恢复演练，让数据韧性可衡量。</p></article>
-        <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">搜索与媒体</h3><p data-i18n="f3Text">本地索引覆盖率、照片视频筛选、文件洞察与媒体整理建议。</p></article>
-        <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">Docker 应用</h3><p data-i18n="f4Text">常用服务一键部署，容器状态、日志、更新集中管理。</p></article>
-        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">安全与权限</h3><p data-i18n="f5Text">RBAC、双因素认证、外链 passkey、分享审计与快照保护。</p></article>
-        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">健康与监控</h3><p data-i18n="f6Text">磁盘、温度、容量、网络与服务状态，一眼看懂。</p></article>
+        <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">存储与卷</h3><p data-i18n="f1Text">btrfs 卷 / 子卷 / 快照，统一 API <code>/api/v1/storage/*</code>，WebUI 与后端契约一致。</p></article>
+        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">文件共享</h3><p data-i18n="f2Text">SMB 与 NFS 为 Core 默认能力；WebDAV / FTP / SFTP 等可在 optional 面启用。</p></article>
+        <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">身份与安全</h3><p data-i18n="f3Text">用户与权限、首次登录强制改密、生产 CSRF、默认监听本机，安全默认更稳。</p></article>
+        <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">Core 健康探针</h3><p data-i18n="f4Text"><code>/api/v1/system/health</code> 聚合 Core 模块真实 Health()，失败即 unhealthy。</p></article>
+        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">可选产品面</h3><p data-i18n="f5Text">Docker、VM、相册、AI、备份、云同步等：设 <code>modules.optional: true</code> 再启用。</p></article>
+        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">Extension · Lab</h3><p data-i18n="f6Text">7 个 Extension 按列表加载；Lab 实验能力仅源码保留，不进入默认 nasd 热路径。</p></article>
       </div>
     </section>
 
-    <section id="experience" class="section split">
+    <section id="architecture" class="section split">
       <div class="section-heading left reveal">
-        <p class="eyebrow">Design details</p>
-        <h2><span lang="zh-CN">精致感来自细节。</span><span lang="en">Refinement lives in the details.</span></h2>
-        <p><span lang="zh-CN">界面克制、文案简短、状态明确。用户不需要读说明书，也知道下一步该做什么。</span><span lang="en">Calm UI, short copy, and clear states. People should know what to do without reading a manual.</span></p>
+        <p class="eyebrow">Architecture</p>
+        <h2><span lang="zh-CN">运行时诚实，分层清晰。</span><span lang="en">Honest runtime. Clear tiers.</span></h2>
+        <p><span lang="zh-CN">v3.22–v3.24 把伪核心收敛进 Lab，生产进程只认 Core 生命周期。营销能力写在仓库里，不等于默认全开。</span><span lang="en">v3.22–v3.24 demoted pseudo-core into Lab. Production lifecycle is Core-only. Shipped code does not mean always-on defaults.</span></p>
       </div>
       <div class="detail-list reveal">
-        <div><b data-i18n="d1Key">轻</b><span data-i18n="d1Text">静态官网无框架依赖，加载快，维护成本低。</span></div>
-        <div><b data-i18n="d2Key">稳</b><span data-i18n="d2Text">核心入口不绕路：下载、安装、文档、GitHub。</span></div>
-        <div><b data-i18n="d3Key">美</b><span data-i18n="d3Text">柔和渐变、微交互、卡片层级、深浅色适配。</span></div>
-        <div><b data-i18n="d4Key">准</b><span data-i18n="d4Text">减少夸张口号，聚焦 NAS 用户真正关心的问题。</span></div>
+        <div><b data-i18n="d1Key">Core</b><span data-i18n="d1Text">identity · storage · network · sharing · system — 始终启动。</span></div>
+        <div><b data-i18n="d2Key">Optional</b><span data-i18n="d2Text">modules.optional=true 时构造 Docker / Photos / AI / 备份等产品管理器。</span></div>
+        <div><b data-i18n="d3Key">Extension</b><span data-i18n="d3Text">modules.extensions 列表按需挂载 7 个产品扩展。</span></div>
+        <div><b data-i18n="d4Key">Lab</b><span data-i18n="d4Text">实验与重复实现仅源码保留，默认不 import、不加载。</span></div>
       </div>
     </section>
 
@@ -112,11 +113,11 @@
         <h2><span lang="zh-CN">三步启动 NAS-OS</span><span lang="en">Start NAS-OS in three steps</span></h2>
       </div>
       <ol class="steps">
-        <li><span>1</span><div><h3 data-i18n="s1Title">下载镜像</h3><p data-i18n="s1Text">从 GitHub Releases 获取适合设备架构的版本。</p></div></li>
-        <li><span>2</span><div><h3 data-i18n="s2Title">启动服务</h3><p data-i18n="s2Text">使用二进制或 Docker 部署，浏览器打开管理界面。</p></div></li>
-        <li><span>3</span><div><h3 data-i18n="s3Title">创建共享</h3><p data-i18n="s3Text">添加磁盘、设置用户权限，开始同步文件与照片。</p></div></li>
+        <li><span>1</span><div><h3 data-i18n="s1Title">下载镜像</h3><p data-i18n="s1Text">从 GitHub Releases 获取 v3.24.3（或最新）适合设备架构的版本。</p></div></li>
+        <li><span>2</span><div><h3 data-i18n="s2Title">启动服务</h3><p data-i18n="s2Text">二进制或 Docker 部署；默认监听 127.0.0.1，浏览器打开 /webui 管理界面。</p></div></li>
+        <li><span>3</span><div><h3 data-i18n="s3Title">创建共享</h3><p data-i18n="s3Text">添加存储、设置用户（首次请修改 bootstrap 密码），开启 SMB/NFS 共享。</p></div></li>
       </ol>
-      <a class="button primary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer" data-i18n="latest">查看最新版本</a>
+      <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer" data-i18n="latest">查看 v3.24.3</a>
     </section>
 
     <section id="faq" class="section faq">
@@ -126,8 +127,9 @@
       </div>
       <div class="faq-list">
         <details class="reveal" open><summary data-i18n="q1">NAS-OS 适合谁？</summary><p data-i18n="a1">适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
-        <details class="reveal"><summary data-i18n="q2">一定要很高配置吗？</summary><p data-i18n="a2">不需要。轻量部署是核心目标，普通 x86 或 ARM64 设备即可起步。</p></details>
-        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开放、轻量、可折腾，同时把常用 NAS 能力收敛到更简单的体验里。</p></details>
+        <details class="reveal"><summary data-i18n="q2">默认会装很多功能吗？</summary><p data-i18n="a2">不会。默认只启用 Core（用户、存储、网络、SMB/NFS、系统健康）。Docker / 相册 / AI / 备份等需 modules.optional=true 或配置 extensions。</p></details>
+        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开源、轻量、可自托管；架构分层诚实（Core / Extension / Lab），差异化能力如本地 AI、WriteOnce 等按需启用，而非默认全开。</p></details>
+        <details class="reveal"><summary data-i18n="q4">最新版本是什么？</summary><p data-i18n="a4">当前官网同步版本为 v3.24.3 Stable。详见 GitHub Releases 与仓库 README 的默认交付面说明。</p></details>
       </div>
     </section>
 
@@ -136,7 +138,7 @@
       <h2><span lang="zh-CN">从一块硬盘开始，拥有自己的云。</span><span lang="en">Start with one drive. Own your cloud.</span></h2>
       <div class="hero-actions">
         <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer" data-i18n="github">去 GitHub</a>
-        <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases" target="_blank" rel="noreferrer" data-i18n="release">下载 Release</a>
+        <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer" data-i18n="release">下载 v3.24.3</a>
       </div>
     </section>
   </main>
