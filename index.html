@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
   <title>NAS-OS｜小而美的私有云系统</title>
-  <meta name="description" content="NAS-OS v3.24.3：默认 Core 五模块（身份/存储/网络/共享/系统），可选 Docker、相册、AI 与扩展。开源、轻量、可自托管的家用 NAS。" />
+  <meta name="description" content="NAS-OS v3.24.3：默认 Platform Core 五模块（身份/存储/网络/共享/系统），Docker、相册、AI 等经 packages.* 与应用中心按需开启。开源、轻量、可自托管的家用 NAS。" />
   <meta property="og:title" content="NAS-OS｜小而美的私有云系统" />
-  <meta property="og:description" content="v3.24.3 Stable — Core 默认交付，optional/extensions 按需开启。把闲置硬件变成可靠的家庭/团队私有云。" />
+  <meta property="og:description" content="v3.24.3 Stable — Platform Core 默认交付，packages 与应用中心按需扩展。把闲置硬件变成可靠的家庭/团队私有云。" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="favicon.ico" />
@@ -36,7 +36,7 @@
       <div class="hero-copy reveal">
         <p class="eyebrow"><span lang="zh-CN">精致、轻量、可自托管</span><span lang="en">Private cloud, beautifully simple</span></p>
         <h1><span lang="zh-CN">精致私有云。</span><span lang="en">A refined private cloud.</span></h1>
-        <p class="hero-text"><span lang="zh-CN">NAS-OS v3.24.3 完成默认表面收敛：Core 五模块（身份 / 存储 / 网络 / 共享 / 系统）开箱即用；Docker、相册、AI、备份等按需开启。架构分层 Core · Extension · Lab，运行时诚实、安全默认更稳。</span><span lang="en">NAS-OS v3.24.3 ships a honest default surface: five Core modules (identity, storage, network, sharing, system) out of the box. Docker, photos, AI, and backups stay optional. Clear Core · Extension · Lab tiers and safer defaults.</span></p>
+        <p class="hero-text"><span lang="zh-CN">NAS-OS v3.24.3：Platform Core 五模块（身份 / 存储 / 网络 / 共享 / 系统）开箱即用；Docker、相册、AI、备份等经 packages 与应用中心按需开启。分层清晰、运行时诚实、安全默认更稳。</span><span lang="en">NAS-OS v3.24.3 ships an honest default surface: five Platform Core modules (identity, storage, network, sharing, system) out of the box. Docker, photos, AI, and backups stay opt-in via packages and the App Center. Clear tiers and safer defaults.</span></p>
         <div class="hero-actions">
           <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer"><span lang="zh-CN">免费下载</span><span lang="en">Free download</span></a>
           <a class="button secondary" href="#install"><span lang="zh-CN">5 分钟开始</span><span lang="en">Start in 5 minutes</span></a>
@@ -44,7 +44,7 @@
         <div class="hero-notes" aria-label="产品特点" data-i18n-attr="aria-label:notesAria">
           <span data-i18n="noteGo">v3.24.3</span>
           <span>Core-first</span>
-          <span>Docker ready</span>
+          <span>Packages on demand</span>
           <span>AMD64 / ARM64</span>
         </div>
       </div>
@@ -72,7 +72,7 @@
 
     <section class="proof section reveal" aria-label="项目数据" data-i18n-attr="aria-label:proofAria">
       <div><strong>5</strong><span data-i18n="proofCore">Core 模块</span></div>
-      <div><strong>7</strong><span data-i18n="proofExt">可配 Extension</span></div>
+      <div><strong>7</strong><span data-i18n="proofExt">HTTP 扩展</span></div>
       <div><strong>1024</strong><span data-i18n="proofEntry">测试文件</span></div>
       <div><strong>Open</strong><span data-i18n="proofOpen">开放自托管</span></div>
     </section>
@@ -81,15 +81,15 @@
       <div class="section-heading reveal">
         <p class="eyebrow">Core features</p>
         <h2 data-i18n="featuresTitle">默认只开真正核心的能力。</h2>
-        <p data-i18n="featuresText">不是把功能写满屏幕。默认 Core 开箱能管盘、共享、用户与健康；其余产品能力按需打开。</p>
+        <p data-i18n="featuresText">不是把功能写满屏幕。默认 Platform Core 开箱能管盘、共享、用户与健康；其余套件经 packages 与应用中心按需打开。</p>
       </div>
       <div class="feature-grid">
         <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">存储与卷</h3><p data-i18n="f1Text">btrfs 卷 / 子卷 / 快照，统一 API <code>/api/v1/storage/*</code>，WebUI 与后端契约一致。</p></article>
-        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">文件共享</h3><p data-i18n="f2Text">SMB 与 NFS 为 Core 默认能力；WebDAV / FTP / SFTP 等可在 optional 面启用。</p></article>
+        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">文件共享</h3><p data-i18n="f2Text">SMB 与 NFS 为 Core 默认能力；WebDAV / FTP / SFTP 等可在套件面按需启用。</p></article>
         <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">身份与安全</h3><p data-i18n="f3Text">用户与权限、首次登录强制改密、生产 CSRF、默认监听本机，安全默认更稳。</p></article>
         <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">Core 健康探针</h3><p data-i18n="f4Text"><code>/api/v1/system/health</code> 聚合 Core 模块真实 Health()，失败即 unhealthy。</p></article>
-        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">可选产品面</h3><p data-i18n="f5Text">Docker、VM、相册、AI、备份、云同步等：设 <code>modules.optional: true</code> 再启用。</p></article>
-        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">Extension · Lab</h3><p data-i18n="f6Text">7 个 Extension 按列表加载；Lab 实验能力仅源码保留，不进入默认 nasd 热路径。</p></article>
+        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">套件与应用中心</h3><p data-i18n="f5Text">Docker、VM、相册、AI、备份等：用 packages.recommended_system / packages.enabled，或在 WebUI 应用中心启用。</p></article>
+        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">扩展 · 社区 · Lab</h3><p data-i18n="f6Text">7 个官方 HTTP 扩展按 packages.enabled 加载；community_dir 承载第三方套件；Lab 仅源码保留，不进默认 nasd 热路径。</p></article>
       </div>
     </section>
 
@@ -97,12 +97,12 @@
       <div class="section-heading left reveal">
         <p class="eyebrow">Architecture</p>
         <h2><span lang="zh-CN">运行时诚实，分层清晰。</span><span lang="en">Honest runtime. Clear tiers.</span></h2>
-        <p><span lang="zh-CN">v3.22–v3.24 把伪核心收敛进 Lab，生产进程只认 Core 生命周期。营销能力写在仓库里，不等于默认全开。</span><span lang="en">v3.22–v3.24 demoted pseudo-core into Lab. Production lifecycle is Core-only. Shipped code does not mean always-on defaults.</span></p>
+        <p><span lang="zh-CN">Platform Core 始终在线；套件面经 packages 与 Host SDK 按需挂载。营销能力写在仓库里，不等于默认全开。旧 modules.* 配置仍双读兼容。</span><span lang="en">Platform Core is always on; the package surface mounts on demand via packages and the Host SDK. Shipped code does not mean always-on defaults. Legacy modules.* still dual-reads for compatibility.</span></p>
       </div>
       <div class="detail-list reveal">
-        <div><b data-i18n="d1Key">Core</b><span data-i18n="d1Text">identity · storage · network · sharing · system — 始终启动。</span></div>
-        <div><b data-i18n="d2Key">Optional</b><span data-i18n="d2Text">modules.optional=true 时构造 Docker / Photos / AI / 备份等产品管理器。</span></div>
-        <div><b data-i18n="d3Key">Extension</b><span data-i18n="d3Text">modules.extensions 列表按需挂载 7 个产品扩展。</span></div>
+        <div><b data-i18n="d1Key">Platform Core</b><span data-i18n="d1Text">identity · storage · network · sharing · system — 始终启动。</span></div>
+        <div><b data-i18n="d2Key">Packages</b><span data-i18n="d2Text">packages.recommended_system / packages.enabled 启用推荐产品与 HTTP 扩展。</span></div>
+        <div><b data-i18n="d3Key">App Center</b><span data-i18n="d3Text">WebUI 应用中心装/启/停套件；SSOT 与配置、运行时一致。</span></div>
         <div><b data-i18n="d4Key">Lab</b><span data-i18n="d4Text">实验与重复实现仅源码保留，默认不 import、不加载。</span></div>
       </div>
     </section>
@@ -127,9 +127,9 @@
       </div>
       <div class="faq-list">
         <details class="reveal" open><summary data-i18n="q1">NAS-OS 适合谁？</summary><p data-i18n="a1">适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
-        <details class="reveal"><summary data-i18n="q2">默认会装很多功能吗？</summary><p data-i18n="a2">不会。默认只启用 Core（用户、存储、网络、SMB/NFS、系统健康）。Docker / 相册 / AI / 备份等需 modules.optional=true 或配置 extensions。</p></details>
-        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开源、轻量、可自托管；架构分层诚实（Core / Extension / Lab），差异化能力如本地 AI、WriteOnce 等按需启用，而非默认全开。</p></details>
-        <details class="reveal"><summary data-i18n="q4">最新版本是什么？</summary><p data-i18n="a4">当前官网同步版本为 v3.24.3 Stable。详见 GitHub Releases 与仓库 README 的默认交付面说明。</p></details>
+        <details class="reveal"><summary data-i18n="q2">默认会装很多功能吗？</summary><p data-i18n="a2">不会。默认只启用 Platform Core（用户、存储、网络、SMB/NFS、系统健康）。Docker / 相册 / AI / 备份等经 packages 配置或 WebUI 应用中心按需开启。</p></details>
+        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开源、轻量、可自托管；分层诚实（Platform Core / Packages / Host SDK / Lab），差异化能力如本地 AI、WriteOnce 等按需启用，而非默认全开。</p></details>
+        <details class="reveal"><summary data-i18n="q4">最新版本是什么？</summary><p data-i18n="a4">当前官网同步版本为 v3.24.3 Stable。详见 GitHub Releases 与仓库 docs 中的默认交付面与 packages 运维说明。</p></details>
       </div>
     </section>
 
