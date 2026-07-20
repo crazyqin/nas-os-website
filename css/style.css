@@ -188,7 +188,7 @@ h3 { letter-spacing: -0.025em; }
 }
 .capacity-ring::after { content: ""; position: absolute; inset: 18px; border-radius: inherit; background: var(--surface-strong); }
 .capacity-ring span { position: relative; z-index: 1; font-size: 42px; font-weight: 900; letter-spacing: -0.06em; }
-.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .metric-grid div { padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: rgba(148,163,184,.08); }
 .metric-grid small { display: block; color: var(--muted); margin-bottom: 3px; }
 .metric-grid b { font-size: 14px; }
