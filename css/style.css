@@ -95,7 +95,7 @@ html[lang^="en"] body { letter-spacing: -0.01em; }
   box-shadow: 0 10px 24px rgba(37, 99, 235, .22);
 }
 .nav { margin-left: auto; display: flex; align-items: center; gap: 6px; }
-.nav a, .theme-toggle {
+.nav a, .theme-toggle, .lang-toggle {
   padding: 9px 13px;
   border-radius: 999px;
   color: var(--muted);
@@ -103,9 +103,16 @@ html[lang^="en"] body { letter-spacing: -0.01em; }
   font-size: 14px;
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
-.nav a:hover, .theme-toggle:hover { color: var(--text); background: rgba(148, 163, 184, .13); }
+.nav a:hover, .theme-toggle:hover, .lang-toggle:hover { color: var(--text); background: rgba(148, 163, 184, .13); }
 .nav-github { color: var(--text) !important; background: rgba(37, 99, 235, .10); }
-.theme-toggle { border: 0; background: transparent; cursor: pointer; font-size: 15px; }
+.theme-toggle, .lang-toggle { border: 0; background: transparent; cursor: pointer; font-size: 15px; }
+.lang-toggle { min-width: 2.6em; font-weight: 750; letter-spacing: 0.02em; }
+
+/* 中文 eyebrow 不做全大写间距，避免「核心亮点」显得生硬 */
+html[lang^="zh"] .eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
 
 .section { width: min(1120px, calc(100% - 32px)); margin: 0 auto; scroll-margin-top: 104px; }
 .hero {

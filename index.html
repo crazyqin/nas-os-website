@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
   <title>NAS-OS｜小而美的私有云系统</title>
-  <meta name="description" content="NAS-OS v3.24.3：默认 Platform Core 五模块（身份/存储/网络/共享/系统），Docker、相册、AI 等经 packages.* 与应用中心按需开启。开源、轻量、可自托管的家用 NAS。" />
+  <meta name="description" content="NAS-OS v3.24.3：默认开启平台核心五模块（身份、存储、网络、共享、系统），容器、相册、AI 等通过套件与应用中心按需启用。开源、轻量、可自托管的家用 NAS。" />
   <meta property="og:title" content="NAS-OS｜小而美的私有云系统" />
-  <meta property="og:description" content="v3.24.3 Stable — Platform Core 默认交付，packages 与应用中心按需扩展。把闲置硬件变成可靠的家庭/团队私有云。" />
+  <meta property="og:description" content="v3.24.3 稳定版 — 平台核心默认交付，套件与应用中心按需扩展。把闲置硬件变成可靠的家庭与团队私有云。" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="favicon.ico" />
@@ -25,27 +25,28 @@
       <a href="#features" data-i18n="navFeatures">亮点</a>
       <a href="#architecture" data-i18n="navArch">架构</a>
       <a href="#install" data-i18n="navInstall">安装</a>
-      <a href="#faq">FAQ</a>
+      <a href="#faq" data-i18n="navFaq">常见问题</a>
       <a class="nav-github" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
+    <button class="lang-toggle" type="button" aria-label="切换语言" data-i18n-attr="aria-label:langAria" data-lang-toggle>EN</button>
     <button class="theme-toggle" type="button" aria-label="切换深浅色" data-i18n-attr="aria-label:themeAria" data-theme-toggle>☾</button>
   </header>
 
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span lang="zh-CN">精致、轻量、可自托管</span><span lang="en">Private cloud, beautifully simple</span></p>
-        <h1><span lang="zh-CN">精致私有云。</span><span lang="en">A refined private cloud.</span></h1>
-        <p class="hero-text"><span lang="zh-CN">NAS-OS v3.24.3：Platform Core 五模块（身份 / 存储 / 网络 / 共享 / 系统）开箱即用；Docker、相册、AI、备份等经 packages 与应用中心按需开启。分层清晰、运行时诚实、安全默认更稳。</span><span lang="en">NAS-OS v3.24.3 ships an honest default surface: five Platform Core modules (identity, storage, network, sharing, system) out of the box. Docker, photos, AI, and backups stay opt-in via packages and the App Center. Clear tiers and safer defaults.</span></p>
+        <p class="eyebrow" data-i18n="heroEyebrow">精致、轻量、可自托管</p>
+        <h1 data-i18n="heroTitle">精致私有云。</h1>
+        <p class="hero-text" data-i18n="heroText">NAS-OS v3.24.3：平台核心五模块（身份、存储、网络、共享、系统）开箱即用；容器、相册、AI、备份等通过套件与应用中心按需开启。分层清晰、运行更诚实、安全默认更稳。</p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer"><span lang="zh-CN">免费下载</span><span lang="en">Free download</span></a>
-          <a class="button secondary" href="#install"><span lang="zh-CN">5 分钟开始</span><span lang="en">Start in 5 minutes</span></a>
+          <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer" data-i18n="download">免费下载</a>
+          <a class="button secondary" href="#install" data-i18n="start">5 分钟开始</a>
         </div>
         <div class="hero-notes" aria-label="产品特点" data-i18n-attr="aria-label:notesAria">
           <span data-i18n="noteGo">v3.24.3</span>
-          <span>Core-first</span>
-          <span>Packages on demand</span>
-          <span>AMD64 / ARM64</span>
+          <span data-i18n="noteCoreFirst">核心优先</span>
+          <span data-i18n="notePackages">按需开启套件</span>
+          <span data-i18n="noteArch">支持 AMD64 / ARM64</span>
         </div>
       </div>
 
@@ -54,14 +55,14 @@
         <div class="dashboard">
           <div class="dash-header">
             <div>
-              <p>Storage</p>
+              <p data-i18n="dashStorage">存储</p>
               <strong>12.4 TB</strong>
             </div>
-            <span class="status-pill" data-i18n="healthy">Healthy</span>
+            <span class="status-pill" data-i18n="healthy">健康</span>
           </div>
           <div class="capacity-ring" aria-hidden="true"><span>68%</span></div>
           <div class="metric-grid">
-            <div><small data-i18n="coreLabel">Core</small><b data-i18n="coreCount">5 模块</b></div>
+            <div><small data-i18n="coreLabel">核心</small><b data-i18n="coreCount">5 模块</b></div>
             <div><small data-i18n="snapshot">快照</small><b data-i18n="snapshotsCount">按卷管理</b></div>
             <div><small data-i18n="shares">共享</small><b data-i18n="sharesStatus">SMB · NFS</b></div>
             <div><small data-i18n="alerts">告警</small><b data-i18n="zeroItems">0 项</b></div>
@@ -71,73 +72,73 @@
     </section>
 
     <section class="proof section reveal" aria-label="项目数据" data-i18n-attr="aria-label:proofAria">
-      <div><strong>5</strong><span data-i18n="proofCore">Core 模块</span></div>
-      <div><strong>7</strong><span data-i18n="proofExt">HTTP 扩展</span></div>
+      <div><strong>5</strong><span data-i18n="proofCore">核心模块</span></div>
+      <div><strong>7</strong><span data-i18n="proofExt">官方扩展</span></div>
       <div><strong>1024</strong><span data-i18n="proofEntry">测试文件</span></div>
-      <div><strong>Open</strong><span data-i18n="proofOpen">开放自托管</span></div>
+      <div><strong data-i18n="proofOpenLabel">开源</strong><span data-i18n="proofOpen">可自托管</span></div>
     </section>
 
     <section id="features" class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">Core features</p>
+        <p class="eyebrow" data-i18n="eyebrowFeatures">核心亮点</p>
         <h2 data-i18n="featuresTitle">默认只开真正核心的能力。</h2>
-        <p data-i18n="featuresText">不是把功能写满屏幕。默认 Platform Core 开箱能管盘、共享、用户与健康；其余套件经 packages 与应用中心按需打开。</p>
+        <p data-i18n="featuresText">不是把功能写满屏幕。默认平台核心就能管盘、共享、用户与健康；其余能力在应用中心或配置里按需打开。</p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">存储与卷</h3><p data-i18n="f1Text">btrfs 卷 / 子卷 / 快照，统一 API <code>/api/v1/storage/*</code>，WebUI 与后端契约一致。</p></article>
-        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">文件共享</h3><p data-i18n="f2Text">SMB 与 NFS 为 Core 默认能力；WebDAV / FTP / SFTP 等可在套件面按需启用。</p></article>
-        <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">身份与安全</h3><p data-i18n="f3Text">用户与权限、首次登录强制改密、生产 CSRF、默认监听本机，安全默认更稳。</p></article>
-        <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">Core 健康探针</h3><p data-i18n="f4Text"><code>/api/v1/system/health</code> 聚合 Core 模块真实 Health()，失败即 unhealthy。</p></article>
-        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">套件与应用中心</h3><p data-i18n="f5Text">Docker、VM、相册、AI、备份等：用 packages.recommended_system / packages.enabled，或在 WebUI 应用中心启用。</p></article>
-        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">扩展 · 社区 · Lab</h3><p data-i18n="f6Text">7 个官方 HTTP 扩展按 packages.enabled 加载；community_dir 承载第三方套件；Lab 仅源码保留，不进默认 nasd 热路径。</p></article>
+        <article class="feature-card reveal"><span>01</span><h3 data-i18n="f1Title">存储与卷</h3><p data-i18n="f1Text">Btrfs 卷、子卷与快照，统一存储接口，管理界面与后端契约一致。</p></article>
+        <article class="feature-card reveal"><span>02</span><h3 data-i18n="f2Title">文件共享</h3><p data-i18n="f2Text">SMB 与 NFS 为默认共享能力；WebDAV、FTP、SFTP 等可在套件中按需启用。</p></article>
+        <article class="feature-card reveal"><span>03</span><h3 data-i18n="f3Title">身份与安全</h3><p data-i18n="f3Text">用户与权限管理、首次登录强制改密、生产环境跨站防护、默认仅本机监听，安全默认更稳。</p></article>
+        <article class="feature-card reveal"><span>04</span><h3 data-i18n="f4Title">健康检查</h3><p data-i18n="f4Text">系统健康接口汇总各核心模块真实状态，任一模块异常即判定为不健康。</p></article>
+        <article class="feature-card reveal"><span>05</span><h3 data-i18n="f5Title">套件与应用中心</h3><p data-i18n="f5Text">容器、虚拟机、相册、AI、备份等：在配置里声明推荐套件与启用列表，或直接在管理界面应用中心操作。</p></article>
+        <article class="feature-card reveal"><span>06</span><h3 data-i18n="f6Title">扩展、社区与实验区</h3><p data-i18n="f6Text">7 个官方扩展按启用列表加载；社区套件目录可放第三方能力；实验代码仅保留在源码中，默认不进入运行热路径。</p></article>
       </div>
     </section>
 
     <section id="architecture" class="section split">
       <div class="section-heading left reveal">
-        <p class="eyebrow">Architecture</p>
-        <h2><span lang="zh-CN">运行时诚实，分层清晰。</span><span lang="en">Honest runtime. Clear tiers.</span></h2>
-        <p><span lang="zh-CN">Platform Core 始终在线；套件面经 packages 与 Host SDK 按需挂载。营销能力写在仓库里，不等于默认全开。旧 modules.* 配置仍双读兼容。</span><span lang="en">Platform Core is always on; the package surface mounts on demand via packages and the Host SDK. Shipped code does not mean always-on defaults. Legacy modules.* still dual-reads for compatibility.</span></p>
+        <p class="eyebrow" data-i18n="eyebrowArch">架构</p>
+        <h2 data-i18n="detailsTitle">运行时诚实，分层清晰。</h2>
+        <p data-i18n="detailsText">平台核心始终在线；套件经配置与宿主接口按需挂载。仓库里有的能力，不等于默认全开。旧版 modules 配置仍兼容读取。</p>
       </div>
       <div class="detail-list reveal">
-        <div><b data-i18n="d1Key">Platform Core</b><span data-i18n="d1Text">identity · storage · network · sharing · system — 始终启动。</span></div>
-        <div><b data-i18n="d2Key">Packages</b><span data-i18n="d2Text">packages.recommended_system / packages.enabled 启用推荐产品与 HTTP 扩展。</span></div>
-        <div><b data-i18n="d3Key">App Center</b><span data-i18n="d3Text">WebUI 应用中心装/启/停套件；SSOT 与配置、运行时一致。</span></div>
-        <div><b data-i18n="d4Key">Lab</b><span data-i18n="d4Text">实验与重复实现仅源码保留，默认不 import、不加载。</span></div>
+        <div><b data-i18n="d1Key">平台核心</b><span data-i18n="d1Text">身份 · 存储 · 网络 · 共享 · 系统 — 始终启动。</span></div>
+        <div><b data-i18n="d2Key">套件</b><span data-i18n="d2Text">通过推荐套件与启用列表，打开产品能力与官方扩展。</span></div>
+        <div><b data-i18n="d3Key">应用中心</b><span data-i18n="d3Text">在管理界面安装、启用、停用套件；配置与运行状态保持一致。</span></div>
+        <div><b data-i18n="d4Key">实验区</b><span data-i18n="d4Text">实验与重复实现仅保留在源码中，默认不加载。</span></div>
       </div>
     </section>
 
     <section id="install" class="section install reveal">
       <div>
-        <p class="eyebrow">Quick start</p>
-        <h2><span lang="zh-CN">三步启动 NAS-OS</span><span lang="en">Start NAS-OS in three steps</span></h2>
+        <p class="eyebrow" data-i18n="eyebrowInstall">快速开始</p>
+        <h2 data-i18n="installTitle">三步启动 NAS-OS</h2>
       </div>
       <ol class="steps">
-        <li><span>1</span><div><h3 data-i18n="s1Title">下载镜像</h3><p data-i18n="s1Text">从 GitHub Releases 获取 v3.24.3（或最新）适合设备架构的版本。</p></div></li>
-        <li><span>2</span><div><h3 data-i18n="s2Title">启动服务</h3><p data-i18n="s2Text">二进制或 Docker 部署；默认监听 127.0.0.1，浏览器打开 /webui 管理界面。</p></div></li>
-        <li><span>3</span><div><h3 data-i18n="s3Title">创建共享</h3><p data-i18n="s3Text">添加存储、设置用户（首次请修改 bootstrap 密码），开启 SMB/NFS 共享。</p></div></li>
+        <li><span>1</span><div><h3 data-i18n="s1Title">下载</h3><p data-i18n="s1Text">从 GitHub 发行页获取 v3.24.3（或最新版）对应设备架构的版本。</p></div></li>
+        <li><span>2</span><div><h3 data-i18n="s2Title">启动服务</h3><p data-i18n="s2Text">使用二进制或容器部署；默认监听本机，浏览器打开管理界面即可。</p></div></li>
+        <li><span>3</span><div><h3 data-i18n="s3Title">创建共享</h3><p data-i18n="s3Text">添加存储、设置用户（首次请修改初始管理员密码），开启 SMB / NFS 共享。</p></div></li>
       </ol>
       <a class="button primary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer" data-i18n="latest">查看 v3.24.3</a>
     </section>
 
     <section id="faq" class="section faq">
       <div class="section-heading reveal">
-        <p class="eyebrow">FAQ</p>
-        <h2><span lang="zh-CN">常见问题</span><span lang="en">Common questions</span></h2>
+        <p class="eyebrow" data-i18n="eyebrowFaq">常见问题</p>
+        <h2 data-i18n="faqTitle">你可能想了解这些</h2>
       </div>
       <div class="faq-list">
         <details class="reveal" open><summary data-i18n="q1">NAS-OS 适合谁？</summary><p data-i18n="a1">适合想把迷你主机、旧电脑、家用服务器变成私有云的个人、家庭和小团队。</p></details>
-        <details class="reveal"><summary data-i18n="q2">默认会装很多功能吗？</summary><p data-i18n="a2">不会。默认只启用 Platform Core（用户、存储、网络、SMB/NFS、系统健康）。Docker / 相册 / AI / 备份等经 packages 配置或 WebUI 应用中心按需开启。</p></details>
-        <details class="reveal"><summary data-i18n="q3">和群晖/TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开源、轻量、可自托管；分层诚实（Platform Core / Packages / Host SDK / Lab），差异化能力如本地 AI、WriteOnce 等按需启用，而非默认全开。</p></details>
-        <details class="reveal"><summary data-i18n="q4">最新版本是什么？</summary><p data-i18n="a4">当前官网同步版本为 v3.24.3 Stable。详见 GitHub Releases 与仓库 docs 中的默认交付面与 packages 运维说明。</p></details>
+        <details class="reveal"><summary data-i18n="q2">默认会装很多功能吗？</summary><p data-i18n="a2">不会。默认只启用平台核心（用户、存储、网络、SMB/NFS、系统健康）。容器、相册、AI、备份等请在配置或管理界面应用中心按需开启。</p></details>
+        <details class="reveal"><summary data-i18n="q3">和群晖 / TrueNAS 有什么区别？</summary><p data-i18n="a3">NAS-OS 更强调开源、轻量、可自托管；分层诚实（平台核心 / 套件 / 宿主接口 / 实验区），本地 AI、一次写入等差异化能力按需启用，而非默认全开。</p></details>
+        <details class="reveal"><summary data-i18n="q4">最新版本是什么？</summary><p data-i18n="a4">当前官网同步版本为 v3.24.3 稳定版。详见 GitHub 发行页与仓库文档中的默认交付面、套件运维说明。</p></details>
       </div>
     </section>
 
     <section class="section cta reveal">
-      <p class="eyebrow">Ready?</p>
-      <h2><span lang="zh-CN">从一块硬盘开始，拥有自己的云。</span><span lang="en">Start with one drive. Own your cloud.</span></h2>
+      <p class="eyebrow" data-i18n="eyebrowReady">准备好了吗？</p>
+      <h2 data-i18n="ctaTitle">从一块硬盘开始，拥有自己的云。</h2>
       <div class="hero-actions">
-        <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer" data-i18n="github">去 GitHub</a>
+        <a class="button primary" href="https://github.com/crazyqin/nas-os" target="_blank" rel="noreferrer" data-i18n="github">访问 GitHub</a>
         <a class="button secondary" href="https://github.com/crazyqin/nas-os/releases/tag/v3.24.3" target="_blank" rel="noreferrer" data-i18n="release">下载 v3.24.3</a>
       </div>
     </section>
@@ -145,7 +146,7 @@
 
   <footer class="footer">
     <span>© 2026 NAS-OS</span>
-    <span data-i18n="footer">Made for private clouds with care.</span>
+    <span data-i18n="footerText">用心做私有云。</span>
   </footer>
 
   <script src="js/main.js"></script>
