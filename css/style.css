@@ -218,8 +218,32 @@ h3 { letter-spacing: -0.025em; }
 
 .split { display: grid; grid-template-columns: .86fr .9fr; gap: 76px; align-items: start; }
 .detail-list { display: grid; gap: 16px; margin-bottom: 34px; }
-.detail-list div { display: grid; grid-template-columns: 44px 1fr; gap: 13px; align-items: center; padding: 14px 16px; border-radius: 22px; box-shadow: none; }
-.detail-list b { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 14px; color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent)); font-size: 15px; white-space: nowrap; }
+.detail-list div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 22px;
+  box-shadow: none;
+}
+/* 标签按文字自适应宽度，可容纳「平台核心」「应用中心」等四字词 */
+.detail-list b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5em;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 .detail-list span { font-size: 14px; line-height: 1.55; }
 
 .install { padding: 34px; display: grid; grid-template-columns: .55fr 1fr auto; gap: 24px; align-items: center; }
