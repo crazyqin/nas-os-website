@@ -19,7 +19,7 @@ const dictionary = {
     download: '免费下载',
     start: '三步开始',
     notesAria: '产品特点',
-    noteGo: 'v3.24.4',
+    noteGo: 'v3.24.5',
     noteCoreFirst: '装好就能用',
     notePackages: '用多少开多少',
     noteArch: '家用电脑可装',
@@ -67,12 +67,12 @@ const dictionary = {
     eyebrowInstall: '快速开始',
     installTitle: '三步开始用 NAS-OS',
     s1Title: '下载',
-    s1Text: '打开 GitHub 下载页，选择 v3.24.4（或更新版本）和你电脑匹配的安装包。',
+    s1Text: '打开 GitHub 下载页，选择 v3.24.5（或更新版本）和你电脑匹配的安装包。',
     s2Title: '启动',
     s2Text: '按说明启动服务，用浏览器打开管理页面。默认只在本机访问，更安全；需要时再开放给局域网。',
     s3Title: '共享文件',
     s3Text: '添加硬盘、创建用户（请立刻改初始密码），打开家庭共享，手机电脑就能用了。',
-    latest: '查看 v3.24.4',
+    latest: '查看 v3.24.5',
     eyebrowFaq: '常见问题',
     faqTitle: '你可能想了解这些',
     q1: 'NAS-OS 适合谁？',
@@ -82,11 +82,11 @@ const dictionary = {
     q3: '和群晖、TrueNAS 有什么不同？',
     a3: 'NAS-OS 开源、可自己部署，更偏轻量和可控。功能默认不堆满，需要什么再加；适合喜欢简洁、愿意自己掌控数据的人。',
     q4: '最新版本是什么？',
-    a4: '当前官网对应 v3.24.4 稳定版。安装包与更新说明见 GitHub 下载页。',
+    a4: '当前官网对应 v3.24.5 稳定版。安装包与更新说明见 GitHub 下载页。',
     eyebrowReady: '准备好了吗？',
     ctaTitle: '从一块硬盘开始，拥有自己的云。',
     github: '访问 GitHub',
-    release: '下载 v3.24.4',
+    release: '下载 v3.24.5',
     footerText: '把数据留在自己家里。'
   },
   en: {
@@ -104,7 +104,7 @@ const dictionary = {
     download: 'Free download',
     start: 'Start in 5 minutes',
     notesAria: 'Product highlights',
-    noteGo: 'v3.24.4',
+    noteGo: 'v3.24.5',
     noteCoreFirst: 'Travel light',
     notePackages: 'Enable what you use',
     noteArch: 'Works on common PCs',
@@ -152,12 +152,12 @@ const dictionary = {
     eyebrowInstall: 'Quick start',
     installTitle: 'Start NAS-OS in three steps',
     s1Title: 'Download',
-    s1Text: 'Get v3.24.4 (or latest) for your device from the GitHub download page.',
+    s1Text: 'Get v3.24.5 (or latest) for your device from the GitHub download page.',
     s2Title: 'Start',
     s2Text: 'Follow the steps to start the service, then open the admin page in your browser (localhost by default for safety).',
     s3Title: 'Share files',
     s3Text: 'Add storage, create users (change the initial password), and turn on home file sharing.',
-    latest: 'View v3.24.4',
+    latest: 'View v3.24.5',
     eyebrowFaq: 'FAQ',
     faqTitle: 'Common questions',
     q1: 'Who is NAS-OS for?',
@@ -167,11 +167,11 @@ const dictionary = {
     q3: 'How is it different from Synology or TrueNAS?',
     a3: 'NAS-OS is open, lightweight, and self-hosted. Features stay off until you need them — for people who prefer simple and under control, not a crowded app store on day one.',
     q4: 'What is the latest version?',
-    a4: 'This site tracks v3.24.4 stable. See the GitHub download page for packages and release notes.',
+    a4: 'This site tracks v3.24.5 stable. See the GitHub download page for packages and release notes.',
     eyebrowReady: 'Ready?',
     ctaTitle: 'Start with one drive. Own your cloud.',
     github: 'Open GitHub',
-    release: 'Download v3.24.4',
+    release: 'Download v3.24.5',
     footerText: 'Made for private clouds with care.'
   }
 };
@@ -203,14 +203,14 @@ function applyLanguage(lang) {
   document.querySelector('meta[name="description"]')?.setAttribute(
     'content',
     lang === 'zh'
-      ? 'NAS-OS v3.24.4：把闲置电脑变成家里的私有云。装好就能管文件、共享和账号；相册、备份、容器等需要时再开。开源、轻量、自己掌控。'
-      : 'NAS-OS v3.24.4: turn a spare PC into a home private cloud. Files, shares, and accounts ready out of the box; photos, backup, and containers when you need them.'
+      ? 'NAS-OS v3.24.5：把闲置电脑变成家里的私有云。装好就能管文件、共享和账号；相册、备份、容器等需要时再开。开源、轻量、自己掌控。'
+      : 'NAS-OS v3.24.5: turn a spare PC into a home private cloud. Files, shares, and accounts ready out of the box; photos, backup, and containers when you need them.'
   );
   document.querySelector('meta[property="og:description"]')?.setAttribute(
     'content',
     lang === 'zh'
-      ? 'v3.24.4 稳定版 — 开箱能用的家用私有云，功能按需开启。把闲置硬件变成可靠的家庭与团队存储。'
-      : 'v3.24.4 Stable — a home private cloud that starts simple. Enable more only when you need it.'
+      ? 'v3.24.5 稳定版 — 开箱能用的家用私有云，功能按需开启。把闲置硬件变成可靠的家庭与团队存储。'
+      : 'v3.24.5 Stable — a home private cloud that starts simple. Enable more only when you need it.'
   );
   document.querySelector('meta[property="og:title"]')?.setAttribute(
     'content',
@@ -295,4 +295,4 @@ revealItems.forEach((item, index) => {
   observer.observe(item);
 });
 
-console.log('NAS-OS Website v3.24.4');
+console.log('NAS-OS Website v3.24.5');
