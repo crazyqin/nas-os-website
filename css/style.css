@@ -374,8 +374,8 @@ details p { padding-top: 14px; padding-right: 36px; }
   border-top: 1px solid var(--line);
 }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 860px) {
   .site-header { top: 8px; width: calc(100% - 20px); }

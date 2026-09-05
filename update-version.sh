@@ -8,11 +8,8 @@ cd ~/projects/nas-os-website
 OLD_VERSION="${1:-v3.24.3}"
 NEW_VERSION="${2:-v3.24.3}"
 
-# 备份原文件
-cp index.html index.html.bak
-
 # 更新所有版本号引用
-sed -i "s|${OLD_VERSION}|${NEW_VERSION}|g" index.html
+sed -i "s|${OLD_VERSION}|${NEW_VERSION}|g" index.html js/main.js
 
 # 更新 meta description 中的版本号
 sed -i "s|NAS-OS ${OLD_VERSION}|NAS-OS ${NEW_VERSION}|g" index.html

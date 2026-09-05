@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 const root = document.documentElement;
 const header = document.querySelector('.site-header');
 const toggle = document.querySelector('[data-theme-toggle]');
@@ -52,7 +53,7 @@ const dictionary = {
     f5Title: '应用中心',
     f5Text: '应用中心里点几下就能开关扩展功能——相册、备份、容器、本地 AI，用到再开，不用的先别装。',
     f6Title: '慢慢扩展就好',
-    f6Text: '默认安全加固（MFA、CSRF 防护、不可变存储），还有本地 AI、以文搜图等差异化能力等你探索。',
+    f6Text: '安全默认就帮你做好：登录有验证、防攻击、防篡改；本地 AI、以文搜图这些进阶玩法，等你需要时再开。',
     eyebrowArch: '产品理念',
     detailsTitle: '用得到的再打开，不堆一堆用不上的。',
     detailsText: '先把文件、共享、账号做好；相册、备份、容器等你需要时再开。代码仓库里有的能力，不等于一安装就全塞给你。',
@@ -63,7 +64,7 @@ const dictionary = {
     d3Key: '应用中心',
     d3Text: '网页里点几下就能开关扩展，不必去改一堆配置文件。',
     d4Key: '差异化能力',
-    d4Text: 'WriteOnce 不可变存储、本地 LLM 服务、CLIP 以文搜图——仓库里已实现，需要时显式启用。',
+    d4Text: '「存了就改不了」的防篡改存储、本地 AI 服务、以文搜图——进阶能力，需要时再启用。',
     eyebrowInstall: '快速开始',
     installTitle: '三步开始用 NAS-OS',
     s1Title: '下载',
@@ -102,7 +103,7 @@ const dictionary = {
     heroTitle: 'A refined private cloud.',
     heroText: 'Turn a spare PC into a home private cloud. Manage files, accounts, and shares right away; open photos, backup, or containers only when you need them. Light, approachable, safer by default.',
     download: 'Free download',
-    start: 'Start in 5 minutes',
+    start: 'Start in three steps',
     notesAria: 'Product highlights',
     noteGo: 'v3.24.5',
     noteCoreFirst: 'Travel light',
@@ -135,9 +136,9 @@ const dictionary = {
     f4Title: 'Status at a glance',
     f4Text: 'See if the system is healthy without guessing whether something is down.',
     f5Title: 'App Center',
-    f5Text: 'Toggle extensions from the App Center — photos, backup, containers, local AI. Turn on what you need, skip what you don't.',
+    f5Text: 'Toggle extensions from the App Center — photos, backup, containers, local AI. Turn on what you need, leave the rest off.',
     f6Title: 'Expand without noise',
-    f6Text: 'Hardened security by default (MFA, CSRF, immutable storage) plus local AI and image search when you're ready.',
+    f6Text: 'Security is on by default — verified logins, attack and tamper defense. Local AI and image search wait until you want them.',
     eyebrowArch: 'How we think',
     detailsTitle: 'Only open what you need.',
     detailsText: 'Start with files, shares, and accounts. Photos, backup, and containers wait until you want them. Shipping a feature in the repo does not mean it is dumped on you by default.',
@@ -148,7 +149,7 @@ const dictionary = {
     d3Key: 'App Center',
     d3Text: 'Install and manage extras in the browser with a few clicks — no config maze.',
     d4Key: 'Edge Features',
-    d4Text: 'WriteOnce immutable storage, local LLM, CLIP image search — built and available, enable explicitly when needed.',
+    d4Text: 'Tamper-proof write-once storage, local AI, and search-by-text — advanced extras, enabled only when you want them.',
     eyebrowInstall: 'Quick start',
     installTitle: 'Start NAS-OS in three steps',
     s1Title: 'Download',
@@ -295,4 +296,3 @@ revealItems.forEach((item, index) => {
   observer.observe(item);
 });
 
-console.log('NAS-OS Website v3.24.5');

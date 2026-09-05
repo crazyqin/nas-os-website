@@ -5,6 +5,7 @@
 ```
 nas-os-website/
 ├── index.html          # 主页面
+├── favicon.svg         # 网站图标
 ├── css/
 │   └── style.css       # 样式文件
 └── js/
