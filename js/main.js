@@ -20,7 +20,7 @@ const dictionary = {
     download: '免费下载',
     start: '三步开始',
     notesAria: '产品特点',
-    noteGo: 'v3.24.5',
+    noteGo: 'v3.24.6',
     noteCoreFirst: '装好就能用',
     notePackages: '用多少开多少',
     noteArch: '家用电脑可装',
@@ -83,7 +83,7 @@ const dictionary = {
     q3: '和群晖、TrueNAS 有什么不同？',
     a3: 'NAS-OS 开源、可自己部署，更偏轻量和可控。功能默认不堆满，需要什么再加；适合喜欢简洁、愿意自己掌控数据的人。',
     q4: '最新版本是什么？',
-    a4: '当前稳定版本为 v3.24.5，最新已发布的安装包见 GitHub 下载页。',
+    a4: '当前稳定版本为 v3.24.6，最新已发布的安装包见 GitHub 下载页。',
     eyebrowReady: '准备好了吗？',
     ctaTitle: '从一块硬盘开始，拥有自己的云。',
     github: '访问 GitHub',
@@ -105,7 +105,7 @@ const dictionary = {
     download: 'Free download',
     start: 'Start in three steps',
     notesAria: 'Product highlights',
-    noteGo: 'v3.24.5',
+    noteGo: 'v3.24.6',
     noteCoreFirst: 'Travel light',
     notePackages: 'Enable what you use',
     noteArch: 'Works on common PCs',
@@ -168,7 +168,7 @@ const dictionary = {
     q3: 'How is it different from Synology or TrueNAS?',
     a3: 'NAS-OS is open, lightweight, and self-hosted. Features stay off until you need them — for people who prefer simple and under control, not a crowded app store on day one.',
     q4: 'What is the latest version?',
-    a4: 'The current stable version is v3.24.5; the latest published installers are on the GitHub download page.',
+    a4: 'The current stable version is v3.24.6; the latest published installers are on the GitHub download page.',
     eyebrowReady: 'Ready?',
     ctaTitle: 'Start with one drive. Own your cloud.',
     github: 'Open GitHub',
@@ -204,14 +204,14 @@ function applyLanguage(lang) {
   document.querySelector('meta[name="description"]')?.setAttribute(
     'content',
     lang === 'zh'
-      ? 'NAS-OS v3.24.5：把闲置电脑变成家里的私有云。装好就能管文件、共享和账号；相册、备份、容器等需要时再开。开源、轻量、自己掌控。'
-      : 'NAS-OS v3.24.5: turn a spare PC into a home private cloud. Files, shares, and accounts ready out of the box; photos, backup, and containers when you need them.'
+      ? 'NAS-OS v3.24.6：把闲置电脑变成家里的私有云。装好就能管文件、共享和账号；相册、备份、容器等需要时再开。开源、轻量、自己掌控。'
+      : 'NAS-OS v3.24.6: turn a spare PC into a home private cloud. Files, shares, and accounts ready out of the box; photos, backup, and containers when you need them.'
   );
   document.querySelector('meta[property="og:description"]')?.setAttribute(
     'content',
     lang === 'zh'
-      ? 'v3.24.5 稳定版 — 开箱能用的家用私有云，功能按需开启。把闲置硬件变成可靠的家庭与团队存储。'
-      : 'v3.24.5 Stable — a home private cloud that starts simple. Enable more only when you need it.'
+      ? 'v3.24.6 稳定版 — 开箱能用的家用私有云，功能按需开启。把闲置硬件变成可靠的家庭与团队存储。'
+      : 'v3.24.6 Stable — a home private cloud that starts simple. Enable more only when you need it.'
   );
   document.querySelector('meta[property="og:title"]')?.setAttribute(
     'content',
