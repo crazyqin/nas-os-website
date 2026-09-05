@@ -1,5 +1,8 @@
 # NAS-OS 官网部署指南
 
+> **当前实际部署**：Cloudflare Pages（连接 GitHub 仓库 `nas-os-website`，推送到 `main` 自动部署）。
+> `themes/` 目录已移除（旧版遗留，页面未引用）。下方其余平台仅作备选方案参考。
+
 ## 网站文件结构
 
 ```
